@@ -4,10 +4,10 @@ class Appointment_Model extends CI_Model
 {
     // this function will return all the active doctors
     public function active_doctors(){
-        // SELECT * FROM `doctors_detail` WHERE status='active'
+        // SELECT * FROM `agent_detail` WHERE status='active'
         $condition = "status='active'";
         $this->db->select('*');
-        $this->db->from('doctors_detail');
+        $this->db->from('agent_detail');
         $this->db->where($condition);
         // run above query in mysql server. return data will be store in the query variable
         $query = $this->db->get();
@@ -20,13 +20,13 @@ class Appointment_Model extends CI_Model
         }
 
     }
-    public function doctor_slots_search($data)
+    public function agent_slots_search($data)
     {
         // print_r($data);
 
         $condition = "doctor_id ='{$data['doctor_id']}' && date='{$data['date']}'";
         $this->db->select('*');
-        $this->db->from('doctor_slots');
+        $this->db->from('agent_slots');
         $this->db->where($condition);
         
         $query = $this->db->get();
@@ -44,7 +44,7 @@ class Appointment_Model extends CI_Model
 
         $condition = "slot_id ='{$data['slotId']}'";
         $this->db->select('*');
-        $this->db->from('doctor_slots');
+        $this->db->from('agent_slots');
         $this->db->where($condition);
         
         $query = $this->db->get();
@@ -74,7 +74,7 @@ class Appointment_Model extends CI_Model
     public function slot_update($data,$slotid) {
         
         $this->db->where('slot_id', $slotid);
-        $this->db->update('doctor_slots', $data);
+        $this->db->update('agent_slots', $data);
         return true;
     }
 

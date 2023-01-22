@@ -2,7 +2,7 @@
 
 <head>
 	<?php $this->load->view('head'); ?>
-	<title>Doctor Appointment Confirmation</title>
+	<title>Appointment Confirmation</title>
 </head>
 
 <body>

@@ -2,7 +2,7 @@
 
 <head>
 	<?php $this->load->view('head'); ?>
-	<title>Doctor Appointment Form</title>
+	<title>Tasks View</title>
 </head>
 
 <body>

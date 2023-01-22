@@ -41,7 +41,7 @@ Class Appointment extends CI_Controller {
 			'doctor_id' => $this->input->post('doctorid'),
 			'date' => $this->input->post('date')
 			);
-		$result = $this->appointment_model->doctor_slots_search($data);
+		$result = $this->appointment_model->agent_slots_search($data);
 		// print_r($result);
 		if(gettype($result) == 'boolean' && !$result){
 			$data['doctor_appointment_slots'] = 'No Records Found for this doctor';

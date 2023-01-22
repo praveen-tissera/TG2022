@@ -2,7 +2,7 @@
 
 <head>
 <?php $this->load->view('head'); ?>
-<title>Doctor Appointment Form</title>
+<title>Appointment Registration</title>
 </head>
 <body>
 <!-- Navigation -->
@@ -36,7 +36,7 @@
         <div class="row">
         	<div class="col-sm-4"></div>
             <div class="col-sm-4 col-lg-12">
-                <h2>Doctor Appointment Guest Registration</h2>
+                <h2>Appointment Guest Registration</h2>
                 <?php echo form_open('appointment/register_patient'); ?>
 	
 	<?php
