@@ -33,11 +33,11 @@ if (isset($this->session->userdata['logged_in'])) {
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">MY ACCOUNT</h5>
-                                <p><a href="#">Edit your account information</a></p>
-                                <p><a href="#">Change your password</a></p>
-                                <p><a href="#">Modify your address book entries</a></p>
-                                <p><a href="#">Modify your wish list</a></p>
+                                <h5 class="card-title">My Account</h5>
+                                <p><a href="#">Edit My account information</a></p>
+                                <p><a href="#">Change My password</a></p>
+                               
+                               
                             </div>
                         </div>
                     </div>
@@ -51,11 +51,11 @@ if (isset($this->session->userdata['logged_in'])) {
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">MY ORDERS</h5>
-                                <p><a href="#">Edit your account information</a></p>
-                                <p><a href="#">Change your password</a></p>
+                                <h5 class="card-title">Stock Management</h5>
+                                <p><a href="#">Available Stocks</a></p>
+                                <p><a href="#">Add/Remove Items to Stocks</a></p>
                                 <p><a href="#">Modify your address book entries</a></p>
-                                <p><a href="#">Modify your wish list</a></p>
+                                
                             </div>
                         </div>
                     </div>
@@ -78,30 +78,13 @@ if (isset($this->session->userdata['logged_in'])) {
                                 <p><a href="<?php echo base_url() . 'tasks/update_delete_task'; ?>">Update/Delete Task</a></p>
                                 <p><a href="#">Manage Task Assignee</a></p>
                                 <p><a href="#">Modify your address book entries</a></p>
-                                <p><a href="#">Modify your wish list</a></p>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                        <div class="col-md-4 pt-4 pb-3">
-                            <img width="205px" src="<?php echo base_url() ?>/images/dashboard/myorders.jpg" alt="myorders">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">MY ORDERS</h5>
-                                <p><a href="#">Edit your account information</a></p>
-                                <p><a href="#">Change your password</a></p>
-                                <p><a href="#">Modify your address book entries</a></p>
-                                <p><a href="#">Modify your wish list</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           
         </div>
 
 
@@ -111,7 +94,7 @@ if (isset($this->session->userdata['logged_in'])) {
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Ozi Tea 2015</p>
+                    <p>Copyright &copy; Supermarket Management System 2015</p>
                 </div>
             </div>
             <!-- /.row -->
