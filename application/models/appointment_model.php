@@ -88,14 +88,14 @@ class Appointment_Model extends CI_Model
         // Query to check whether username already exist or not
         $condition = "user_name =" . "'" . $data['user_name'] . "'";
         $this->db->select('*');
-        $this->db->from('user_login');
+        $this->db->from('user');
         $this->db->where($condition);
         $this->db->limit(1);
         $query = $this->db->get();
         if ($query->num_rows() == 0) {
 
             // Query to insert data in database
-            $this->db->insert('user_login', $data);
+            $this->db->insert('user', $data);
             if ($this->db->affected_rows() > 0) {
                 return true;
             }
@@ -107,11 +107,11 @@ class Appointment_Model extends CI_Model
     // Read data using username and password
     public function login($data)
     {
-        // SELECT * FROM `user_login` WHERE user_name = 'nuwan' && user_password='123456'
+        // SELECT * FROM `user` WHERE user_name = 'nuwan' && user_password='123456'
 
         $condition = "user_name =" . "'" . $data['username'] . "' AND " . "user_password =" . "'" . $data['password'] . "'";
         $this->db->select('*');
-        $this->db->from('user_login');
+        $this->db->from('user');
         $this->db->where($condition);
         $this->db->limit(1);
         // run this query to get result
@@ -130,7 +130,7 @@ class Appointment_Model extends CI_Model
 
         $condition = "user_name =" . "'" . $username . "'";
         $this->db->select('*');
-        $this->db->from('user_login');
+        $this->db->from('user');
         $this->db->where($condition);
         $this->db->limit(1);
         $query = $this->db->get();
