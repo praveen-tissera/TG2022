@@ -1,0 +1,17 @@
+//Download XAMPP Version 5.6.38
+from 
+https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/
+
+For my Coding, I used Visual Studio Code to do my code.
+Download
+
+// Place the files under htdocs/
+When Doing the payment for the sandbox paypal.com,\
+
+Buyer account is 
+Email: gdubb11@gmail.com
+Password: PSDT0153
+
+Seller account
+Email:eniacitacademy@gmail.com
+Password: PSDT0153
