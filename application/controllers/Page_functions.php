@@ -8,6 +8,7 @@ class Page_functions extends CI_Controller {
 					$this->load->helper('url_helper');
 					$this->load->library('session');
 					$this->load->helper('url');
+					$this->load->model('project_model');
 
 				
 			}
@@ -120,6 +121,7 @@ class Page_functions extends CI_Controller {
 		} 
 }
 
+
 public function find_profile($usrname ){	
 			
 			$this->check_restricted();
@@ -185,5 +187,26 @@ public function search(){
 			$this->load->view('pages/profile_search', $data);
 			$this->load->view('templates/footer');
 		}
+	}
+
+
+	public function find_project($projectID){	
+			
+		$this->check_restricted();
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+		
+		$data['info'] = $this->project_model->join_find_project($projectID);
+		$data['tasks'] = $this->project_model->find_tasks($projectID);
+		$data['roles'] = $this->project_model->find_assignment_roles($projectID);
+		$data['rolesback'] = $this->project_model->find_roles($projectID);
+
+		$data['skills'] = $this->project_model->find_role_skills($projectID);
+		print_r($data);
+		
+		$this->load->view('templates/profile_header', $data);
+		$this->load->view('pages/project/show_project');
+		$this->load->view('templates/footer');
+	
 	}
 }

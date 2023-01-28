@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2023 at 06:33 AM
+-- Generation Time: Jan 28, 2023 at 07:42 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.3.28
 
@@ -52,8 +52,8 @@ CREATE TABLE `address` (
   `country` varchar(20) NOT NULL,
   `city` varchar(20) NOT NULL,
   `postcode` varchar(20) NOT NULL,
-  `streetName` varchar(30) NOT NULL,
-  `buldingNumber` int(5) NOT NULL
+  `streetName` varchar(30) DEFAULT NULL,
+  `buldingNumber` int(5) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -61,7 +61,8 @@ CREATE TABLE `address` (
 --
 
 INSERT INTO `address` (`addressID`, `country`, `city`, `postcode`, `streetName`, `buldingNumber`) VALUES
-(1, 'sri lanka', 'colombo', '10622', 'colombo', 1);
+(1, 'sri lanka', 'colombo', '10622', 'colombo', 1),
+(2, '123', 'abc', 'def', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -80,7 +81,7 @@ CREATE TABLE `employee_assignment` (
 --
 
 INSERT INTO `employee_assignment` (`id`, `accountID`, `roleID`) VALUES
-(35, 1, 10);
+(57, 1, 11);
 
 -- --------------------------------------------------------
 
@@ -152,7 +153,7 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`projectID`, `managerID`, `addressID`, `title`, `startDate`, `endDate`, `skillsRequiredID`, `budget`, `projectTypeID`, `completed`) VALUES
-(16, 1, 1, 'Building project at Colombo', '0000-00-00', '0000-00-00', 0, '100000', 'building construction', b'0');
+(17, 1, 2, 'Building project at Colombo', '0000-00-00', '0000-00-00', 0, '100000', 'building construction', b'0');
 
 -- --------------------------------------------------------
 
@@ -173,7 +174,7 @@ CREATE TABLE `project_roles` (
 --
 
 INSERT INTO `project_roles` (`roleID`, `taskID`, `numPeople`, `roleName`, `projectID`) VALUES
-(10, 16, 1, 'BA', 16);
+(11, 17, 1, 'BA', 17);
 
 -- --------------------------------------------------------
 
@@ -194,7 +195,7 @@ CREATE TABLE `project_tasks` (
 --
 
 INSERT INTO `project_tasks` (`projectID`, `title`, `startDate`, `endDate`, `role`) VALUES
-(16, 'Analasis', '0000-00-00', '0000-00-00', '');
+(17, 'Analasis', '0000-00-00', '0000-00-00', '');
 
 -- --------------------------------------------------------
 
@@ -214,7 +215,7 @@ CREATE TABLE `role_skills_required` (
 --
 
 INSERT INTO `role_skills_required` (`skillID`, `roleID`, `skillLevel`, `id`) VALUES
-(1, 10, 2, 4);
+(1, 11, 2, 5);
 
 -- --------------------------------------------------------
 
@@ -405,13 +406,13 @@ ALTER TABLE `account_type`
 -- AUTO_INCREMENT for table `address`
 --
 ALTER TABLE `address`
-  MODIFY `addressID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `addressID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `employee_assignment`
 --
 ALTER TABLE `employee_assignment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `leave_type`
@@ -429,25 +430,25 @@ ALTER TABLE `person`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `projectID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `projectID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `project_roles`
 --
 ALTER TABLE `project_roles`
-  MODIFY `roleID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `roleID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `project_tasks`
 --
 ALTER TABLE `project_tasks`
-  MODIFY `projectID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `projectID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `role_skills_required`
 --
 ALTER TABLE `role_skills_required`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `skilllevel`

@@ -69,4 +69,8 @@ $route['logout'] = 'login/logout';
 $route['(:any)'] = 'page_functions/view/$1';
 $route['default_controller'] = 'page_functions/index';
 
+$route['view_project'] = 'page_functions/view_project';
+$route['find_project/(:any)'] = 'page_functions/find_project/$1';
+$route['edit_project/(:any)'] = 'page_functions/edit_project/$1';
+
 
