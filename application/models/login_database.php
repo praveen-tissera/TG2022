@@ -26,14 +26,12 @@ return false;
 
 // Read data using username and password
 public function login($data) {
-// SELECT * FROM `user_login` WHERE user_name = 'nuwan' && user_password='123456'
 
 $condition = "user_name =" . "'" . $data['username'] . "' AND " . "user_password =" . "'" . $data['password'] . "'";
 $this->db->select('*');
 $this->db->from('user_login');
 $this->db->where($condition);
 $this->db->limit(1);
-// run this query to get result
 $query = $this->db->get();
 
 if ($query->num_rows() == 1) {

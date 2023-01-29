@@ -12,12 +12,6 @@ if (isset($this->session->userdata['logged_in'])) {
 </head>
 
 <body>
-    <!-- Navigation -->
-    <?php $this->load->view('nav'); ?>
-
-    <!-- Half Page Image Background Carousel Header -->
-    <?php $this->load->view('slider'); ?>
-
 
     <div class="container" style="margin-top:5px;">
 
@@ -44,6 +38,14 @@ if (isset($this->session->userdata['logged_in'])) {
                 echo form_open('user_authentication/new_user_registration');
 
 
+                echo "<div class='error_msg'>";
+                if (isset($message_display)) {
+                    echo "<span class=\"label label-danger\">" . $message_display . "</span>";
+                }
+                echo "</div>";
+                echo "<br/>";
+
+
                 $data = array(
                     'type' => 'text',
                     'name' => 'username',
@@ -51,12 +53,9 @@ if (isset($this->session->userdata['logged_in'])) {
                     'placeholder' => 'Create Username'
                 );
                 echo form_input($data);
-                echo "<div class='error_msg'>";
-                if (isset($message_display)) {
-                    echo "<span class=\"label label-danger\">" . $message_display . "</span>";
-                }
-                echo "</div>";
                 echo "<br/>";
+
+                
 
                 $data = array(
                     'type' => 'email',
@@ -77,6 +76,29 @@ if (isset($this->session->userdata['logged_in'])) {
                 );
                 echo form_password($data);
                 echo "<br/>";
+
+
+
+                $data = array(
+                    'type' => 'text',
+                    'name' => 'role',
+                    'class' => 'form-control',
+                    'placeholder' => 'Role'
+                );
+                echo form_input($data);
+                ?>
+                <td><select>
+                <option value='1'<?php if([''] == '1') { ?> selected='selected'<?php } ?>>1</option>;
+            
+                <option value='2'<?php if([''] == '2') { ?> selected='selected'<?php } ?>>2</option>;
+            
+                <option value='3'<?php if([''] == '3') { ?> selected='selected'<?php } ?>>3</option>;
+            
+                </select></td>
+                <?php
+                echo "<br/>";
+
+
 
                 echo form_submit('submit', 'Sign Up', "class='btn btn-success'");
                 $url = base_url() . 'index.php/user_authentication';

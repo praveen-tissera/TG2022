@@ -5,17 +5,15 @@
 <title>Login Form</title>
 </head>
 <body>
-<!-- Navigation -->
-   <?php $this->load->view('nav'); ?>
+
 
 <!-- Half Page Image Background Carousel Header -->
     
-   <?php $this->load->view('slider'); ?>
-
+<div class="row" style="height: 200px;"></div>
 <div class="container" style="margin-top:5px;">
 
 		<div class="row text-center">
-			<div class="col-sm-12">
+			<div style="width:50%; margin:auto">
 				<?php
 				if (isset($logout_message)) {
 					echo "<div class='alert alert-success' role='alert'><span class='sr-only'>Success:</span>";
@@ -39,8 +37,12 @@
         	<div class="col-sm-4"></div>
             <div class="col-sm-4 col-lg-12 text-center">
                 <h2>Login Form</h2>
+				<br>
                 <?php echo form_open('user_authentication/user_login_process'); ?>
 	
+
+				<div class="row text-center">
+			<div style="width:50%; margin:auto">
 	<?php
 
 	
@@ -55,16 +57,24 @@
 			echo "</div>";
 		}	
 	?>
+	</div>
+	</div>
+
+	<br>
 	
-	<div class="input-group" style="margin-bottom:25px;">
+	<div class="input-group" style="margin-bottom:25px; width:50%; margin:auto">
 		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
 	  	<input type="text" name="username" id="name" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
 	</div>
+
+	<br>
 	
-	<div class="input-group" style="margin-bottom:25px;">
+	<div class="input-group" style="margin-bottom:25px; width:50%;  margin:auto;">
 	  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-	  <input type="password" name="password" id="password" class="form-control" placeholder="password" aria-describedby="basic-addon1">
+	  <input type="password" name="password" id="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
 	</div>
+
+	<br>
 	
 	<input type="submit" value=" Login "  class="btn btn-success" name="submit" />
 	
@@ -73,10 +83,6 @@
             </div>
             <div class="col-sm-4"></div>
         </div>
-
-        <hr>
-
-       <?php $this->load->view('footer'); ?>
 
     </div>
 </body>

@@ -24,7 +24,7 @@ Class User_Authentication extends CI_Controller {
 	public function index() {
 		
 		if(isset($this->session->userdata['logged_in'])){
-			$this->load->view('user_page');
+			$this->load->view('dashboard');
 		}
 		else{
 			$this->load->view('login_form');
@@ -44,6 +44,7 @@ Class User_Authentication extends CI_Controller {
 		$this->form_validation->set_rules('username', 'Username', 'trim|required');
 		$this->form_validation->set_rules('email_value', 'Email', 'trim|required');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
+		$this->form_validation->set_rules('role', 'Role', 'trim|required');
 		if ($this->form_validation->run() == FALSE) {
 			$this->load->view('registration_form');
 		} 
@@ -51,11 +52,12 @@ Class User_Authentication extends CI_Controller {
 			$data = array(
 			'user_name' => $this->input->post('username'),
 			'user_email' => $this->input->post('email_value'),
-			'user_password' => $this->input->post('password')
+			'user_password' => $this->input->post('password'),
+			'role' => $this->input->post('role')
 			);
 			$result = $this->login_database->registration_insert($data);
 			if ($result == TRUE) {
-				$data['message_display'] = 'Registration Successfully !';
+				$data['message_display'] = 'Registration Successfully Done!';
 				$this->load->view('login_form', $data);
 			} 
 			else {
@@ -74,7 +76,7 @@ Class User_Authentication extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE) {
 			if(isset($this->session->userdata['logged_in'])){
-				$this->load->view('user_page');
+				$this->load->view('dashboard');
 			}
 			else{
 				$this->load->view('login_form');
@@ -99,7 +101,7 @@ Class User_Authentication extends CI_Controller {
 					// Add user data in session
 					$this->session->set_userdata('logged_in', $session_data);
 					// print_r($this->session);
-					 $this->load->view('user_page');
+					 $this->load->view('dashboard');
 				}
 			} 
 			else {
@@ -113,13 +115,13 @@ Class User_Authentication extends CI_Controller {
 
 	// Logout from user page
 	public function logout() {
-		
+
 		// Removing session data
 		$sess_array = array(
 		'username' => ''
 		);
 		$this->session->unset_userdata('logged_in', $sess_array);
-		$data['message_display'] = 'Successfully Logout';
+		$data['message_display'] = 'Successfully Logged-out';
 		$this->load->view('login_form', $data);
 		}
 

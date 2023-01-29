@@ -14,9 +14,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url().'appointment' ?>">Doctor Appointment</a>
-            </li>
            
             <li class="nav-item dropdown">
                 <?php
@@ -30,10 +27,8 @@
                                 echo "<span class=\"caret\"></span>
                             </a>
                             <div class=\"dropdown-menu\" >
-                                <a class=\"dropdown-item\" href=\"user_authentication/logout\">Logout</a>
-                                <a class=\"dropdown-item\" href=\" ";
-                                echo base_url().'user_authentication';
-                                echo  "\">Dashboard</a>  
+                                <a class=\"dropdown-item\" href=\"logout\">Logout</a>
+                                <a class=\"dropdown-item\" href=\"#\">My Orders</a>  
                             </ul>
                         </div>";
                 }
