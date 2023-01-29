@@ -1,89 +1,67 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100i,300,300i,400,700" rel="stylesheet">
 
-	<style type="text/css">
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="<?= base_url('tool/css/bootstrap.min.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('tool/css/all.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('tool/css/owl.carousel.min.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?= base_url('tool/css/style.css'); ?>">
 
-	::selection { background-color: #E13300; color: white; }
-	::-moz-selection { background-color: #E13300; color: white; }
+    <script type="text/javascript" src="<?= base_url('tool/js/jquery-3.2.1.slim.min.js'); ?>"></script>
 
-	body {
-		background-color: #fff;
-		margin: 40px;
-		font: 13px/20px normal Helvetica, Arial, sans-serif;
-		color: #4F5155;
-	}
-
-	a {
-		color: #003399;
-		background-color: transparent;
-		font-weight: normal;
-	}
-
-	h1 {
-		color: #444;
-		background-color: transparent;
-		border-bottom: 1px solid #D0D0D0;
-		font-size: 19px;
-		font-weight: normal;
-		margin: 0 0 14px 0;
-		padding: 14px 15px 10px 15px;
-	}
-
-	code {
-		font-family: Consolas, Monaco, Courier New, Courier, monospace;
-		font-size: 12px;
-		background-color: #f9f9f9;
-		border: 1px solid #D0D0D0;
-		color: #002166;
-		display: block;
-		margin: 14px 0 14px 0;
-		padding: 12px 10px 12px 10px;
-	}
-
-	#body {
-		margin: 0 15px 0 15px;
-	}
-
-	p.footer {
-		text-align: right;
-		font-size: 11px;
-		border-top: 1px solid #D0D0D0;
-		line-height: 32px;
-		padding: 0 10px 0 10px;
-		margin: 20px 0 0 0;
-	}
-
-	#container {
-		margin: 10px;
-		border: 1px solid #D0D0D0;
-		box-shadow: 0 0 8px #D0D0D0;
-	}
-	</style>
+    <title>Quick Start with codeIgniter</title>
+     <link rel="shortcut icon" type="image/png" href="<?= base_url('tool/img/favicon.png'); ?>">
 </head>
 <body>
-
-<div id="container">
-	<h1>Welcome to my project!</h1>
-
-	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
-
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/Welcome.php</code>
-
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+<!--===================== Header Area ================= -->
+<div class="header-area">
+	<div class="container-fluid">
+		<div class="row">
+				<div class="logo">
+					<?= anchor("welcome", '<i class="fas fa-home ic"></i>'); ?> <span>Home</span>
+				</div>
+		</div>
 	</div>
+</div>
+<div class="padding-bottom"></div>
 
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
+<!-- ==================== Content area ================= -->
+<div class="container">
+	<h1>Welcome to codeIgniter.Lets custom in your way...</h1>
 </div>
 
+
+<!--===================== Footer Area ================= -->
+<div class="padding-top"></div>
+<div class="foter-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 ofsett-3">
+                <p>Dilini Bookshop | 2022<br>
+                Email : dilini@gmail.com</p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script type="text/javascript" src="<?= base_url('tool/js/popper-1.12.9.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?= base_url('tool/js/bootstrap.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?= base_url('tool/js/all.js'); ?>"></script>
+    <script type="text/javascript" src="<?= base_url('tool/js/owl.carousel.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?= base_url('tool/js/main.js'); ?>"></script>
 </body>
 </html>
