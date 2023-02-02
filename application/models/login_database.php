@@ -28,7 +28,7 @@ return false;
 public function login($data) {
 // SELECT * FROM `user` WHERE user_name = 'nuwan' && user_password='123456'
 
-$condition = "user_name =" . "'" . $data['username'] . "' AND " . "user_password =" . "'" . $data['password'] . "'";
+$condition = "user_email =" . "'" . $data['email'] . "' AND " . "user_password =" . "'" . $data['password'] . "'";
 $this->db->select('*');
 $this->db->from('user');
 $this->db->where($condition);
@@ -46,7 +46,7 @@ return false;
 // Read data from database to show data in admin page
 public function read_user_information($username) {
 
-$condition = "user_name =" . "'" . $username . "'";
+$condition = "user_email =" . "'" . $username . "'";
 $this->db->select('*');
 $this->db->from('user');
 $this->db->where($condition);

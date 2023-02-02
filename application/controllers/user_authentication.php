@@ -37,6 +37,10 @@ Class User_Authentication extends CI_Controller {
 	$this->load->view('registration_form');
 	}
 
+	public function user_login_show() {
+		$this->load->view('login_form');
+		}
+
 	// Validate and store registration data in database
 	public function new_user_registration() {
 
@@ -55,7 +59,7 @@ Class User_Authentication extends CI_Controller {
 			);
 			$result = $this->login_database->registration_insert($data);
 			if ($result == TRUE) {
-				$data['message_display'] = 'Registration Successfully !';
+				$data['message_display'] = 'Registered Successfully !';
 				$this->load->view('login_form', $data);
 			} 
 			else {
@@ -69,7 +73,7 @@ Class User_Authentication extends CI_Controller {
 	public function user_login_process() {
 
 		//$this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
-		$this->form_validation->set_rules('username', 'Username', 'trim|required');
+		$this->form_validation->set_rules('email', 'Email', 'trim|required');
 		$this->form_validation->set_rules('password', 'Password', 'trim|required');
 
 		if ($this->form_validation->run() == FALSE) {
@@ -82,13 +86,13 @@ Class User_Authentication extends CI_Controller {
 		} 
 		else {
 			$data = array(
-			'username' => $this->input->post('username'),
+			'email' => $this->input->post('email'),
 			'password' => $this->input->post('password')
 			);
 			$result = $this->login_database->login($data);
 			if ($result == TRUE) {
 
-				$username = $this->input->post('username');
+				$username = $this->input->post('email');
 				$result = $this->login_database->read_user_information($username);
 				if ($result != false) {
 

@@ -9,24 +9,23 @@ if (isset($this->session->userdata['logged_in'])) {
 <head>
     <?php $this->load->view('head'); ?>
     <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/signupstyle.css">
 </head>
 
 <body>
     <!-- Navigation -->
     <?php $this->load->view('nav'); ?>
 
-    <!-- Half Page Image Background Carousel Header -->
-    <?php $this->load->view('slider'); ?>
 
 
-    <div class="container" style="margin-top:5px;">
+    <div class="container right-panel-active">
 
         <div class="row text-center">
             <div class="col-sm-12">
 
                 <?php
                 if (validation_errors()) {
-                    echo "<div class='alert alert-danger' role='alert'><span class='sr-only'>Success:</span>";
+                    echo "<div class='alert alert-danger' role='alert' style='height:80%; width: 45%; margin-left:400px'><span class='sr-only'>Success:</span>";
                     echo validation_errors();
                     echo "</div>";
                 }
@@ -38,62 +37,96 @@ if (isset($this->session->userdata['logged_in'])) {
         <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4 col-lg-12 text-center">
-                <h2>Registration Form</h2>
-                <?php
+                <div class="container__form container--signup">
+                    <h2 class=form__title style="margin-top: 39px;">Sign Up</h2>
+                    <?php
 
-                echo form_open('user_authentication/new_user_registration');
+                    echo form_open('user_authentication/new_user_registration');
+                    echo "<div class='row justify-content-center'>";
+                    echo "<div class='form-floating'>";
+                    echo "<i class='icon fa-solid fa-user fa-lg'></i>";
+
+                    $data = array(
+                        'type' => 'text',
+                        'id' => 'user',
+                        'name' => 'username',
+                        'class' => 'form-control form-control-lg',
+                        'placeholder' => 'Username:'
+                    );
+                    echo "<label class='form-label' for='user'> User Name: </label>";
+
+                    echo form_input($data);
+                    echo "<div class='error_msg'>";
+                    if (isset($message_display)) {
+                        echo "<div class='alert alert-danger' role='alert'><span class=\"label label-danger\">" . $message_display . "</span>";
+                    }
+                    echo "</div>";
+                    echo "</div>";
+                    echo "</div>";
+
+                    echo "<div class='row justify-content-center'>";
+                    echo "<div class='form-floating'>";
+                    echo "<i class='icon fa-solid fa-envelope fa-lg'></i>";
+                    $data = array(
+                        'type' => 'email',
+                        'id' => 'email',
+                        'name' => 'email_value',
+                        'class' => 'form-control',
+                        'placeholder' => 'Email Address:'
+                    );
+                    echo "<label class='form-label' for='email'> Email Address: </label>";
 
 
-                $data = array(
-                    'type' => 'text',
-                    'name' => 'username',
-                    'class' => 'form-control',
-                    'placeholder' => 'Create Username'
-                );
-                echo form_input($data);
-                echo "<div class='error_msg'>";
-                if (isset($message_display)) {
-                    echo "<span class=\"label label-danger\">" . $message_display . "</span>";
-                }
-                echo "</div>";
-                echo "<br/>";
+                    echo form_input($data);
+                    echo "</div>";
+                    echo "</div>";
 
-                $data = array(
-                    'type' => 'email',
-                    'name' => 'email_value',
-                    'class' => 'form-control',
-                    'placeholder' => 'Email'
-                );
-                echo form_input($data);
-                echo "<br/>";
+                    echo "<div class='row justify-content-center'>";
+                    echo "<div class='form-floating'>   ";
+                    echo "<i class='icon fa-solid fa-key fa-lg'></i>";
+                    $data = array(
+                        'type' => 'text',
+                        'id' => 'pass',
+                        'name' => 'password',
+                        'class' => 'form-control',
+                        'placeholder' => 'Password:'
+                    );
+                    echo "<label class='form-label' for='pass'> Password: </label>";
 
 
+                    echo form_password($data);
+                    echo "</div>";
+                    echo "</div>";
+                    echo "<br>";
+                    echo form_submit('submit', 'Sign Up', "class='btn'");
+                    $url = base_url() . 'index.php/user_authentication';
 
-                $data = array(
-                    'type' => 'text',
-                    'name' => 'password',
-                    'class' => 'form-control',
-                    'placeholder' => 'Password'
-                );
-                echo form_password($data);
-                echo "<br/>";
+                    echo form_close();
+                    ?>
 
-                echo form_submit('submit', 'Sign Up', "class='btn btn-success'");
-                $url = base_url() . 'index.php/user_authentication';
-                echo "<a href=\"$url\" \" style=\"margin-left:20px;\">For Login Click Here</a>";
-                echo form_close();
-                ?>
-
+                </div>
+                <div class="col-sm-4"></div>
             </div>
-            <div class="col-sm-4"></div>
+
+
+
+
+
         </div>
+        <div class="container__overlay">
+            <div class="overlay">
+                <div class="overlay__panel overlay--left" style="height: 104%;">
+                    <h5>Already have an account?</h5>
+                    <form action="user_login_show">
+                        <input type="submit" class="btn" value="Sign In" style="padding: 14px default;" />
+                    </form>
 
-        <hr>
-
-        <!-- Footer -->
-        <?php $this->load->view('footer'); ?>
-
+                </div>
+                
+            </div>
+        </div>
     </div>
+
 </body>
 
 </html>
