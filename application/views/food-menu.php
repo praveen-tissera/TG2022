@@ -70,14 +70,14 @@
                                                 echo "<div>";
                                                         echo "<h5 class='mb-10'><b>$product->product_title</b><b class='color-primary float-right'>$product->currency: $product->price</b></h5>";
                                                         echo "<p class='text-justify'>";
-                                                                echo $product->product_description;
-                                                                if(!empty($product->items_details)){
-                                                                       echo  "<h5>ingredients</h5>";
-                                                                         foreach ($product->items_details as $key_product_item => $value_product_item) {
-                                                                                echo "<span class='badge badge-dark mx-1 my-1' style='font-size:12px;'>$value_product_item->item_title</span>";
+                                                                //echo $product->product_description;
+                                                                //if(!empty($product->items_details)){
+                                                                      // echo  "<h5>ingredients</h5>";
+                                                                         //foreach ($product->items_details as $key_product_item => $value_product_item) {
+                                                                               // echo "<span class='badge badge-dark mx-1 my-1' style='font-size:12px;'>$value_product_item->item_title</span>";
                                                                                  
-                                                                         }
-                                                                 }
+                                                                         //}
+                                                                 //}
                                                                 echo "<br><input type='number' value='1' name='quantity' class='quantity form-control'>";
                                                         echo "</p>";
                                                         

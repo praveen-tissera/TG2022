@@ -45,11 +45,11 @@
               <input type="text" name="product_name" class="form-control" id="productname" placeholder="Product name" required>
               
             </div>
-            <div class="form-group">
+            <!--<div class="form-group">
               <label for="productdescription">Product Description</label>
               <textarea name="product_descripion" class="form-control" id="productdescription" required></textarea>
               
-            </div>
+            </div>-->
             <div class="form-group">
             <?php echo "<input type='file' class='form-control' name='userfile' size='20' required />"; ?>
             </div>

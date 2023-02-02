@@ -32,7 +32,7 @@
 ?>
 
                                 <h1 class="mt-30 mb-15">Mran Supermarket</h1>
-                                <h5><a href="<?php echo base_url('index.php/user/foodMenu') ?>" class="btn-primaryc plr-25"><b>SEE TODAYS MENU</b></a></h5>
+                                <h5><a href="<?php echo base_url('index.php/user/foodMenu') ?>" class="btn-primaryc plr-25"><b>SEE PRODUCTS</b></a></h5>
                         </div><!-- dplay-tbl-cell -->
                 </div><!-- dplay-tbl -->
         </div><!-- container -->
@@ -99,10 +99,16 @@
                         <div class="col-lg-3 col-md-4  col-sm-6 ">
                                 <div class="center-text mb-30">
                                         <div class="ïmg-200x mlr-auto pos-relative">
-                                                <h6 class="ribbon-cont"><div class="ribbon primary"></div><b>OFFER</b></h6>
+                                                <h6 class="ribbon-cont"><div class="ribbon primary"></div><b>OFFER 25%</b></h6>
+                                                <img src="images/seller-2-200x200.png" alt="">
+                                        
+
+                                        <div class="ïmg-200x mlr-auto pos-relative">
+                                                <h6 class="ribbon-cont"><div class="ribbon primary"></div><b>Uniliver products</b></h6>
                                                 <img src="images/seller-2-200x200.png" alt="">
                                         </div>
-                                        <h5 class="mt-20">Pizza Margherita</h5>
+                                        </div>
+                                        <h5 class="mt-20">Comfort Fabric Conditioner 220ML</h5>
                                         <h4 class="mt-5"><b>LKR 550.00</b></h4>
                                         <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
                                 </div><!--text-center-->
@@ -110,8 +116,8 @@
 
                         <div class="col-lg-3 col-md-4  col-sm-6 ">
                                 <div class="center-text mb-30">
-                                        <div class="ïmg-200x mlr-auto pos-relative"><img src="images/seller-2-200x200.png" alt=""></div>
-                                        <h5 class="mt-20">Pizza Tandoori Paneer </h5>
+                                        <div class="ïmg-200x mlr-auto pos-relative"><img src="images/seller-2-200x200(2).png" alt=""></div>
+                                        <h5 class="mt-20">Dove Shampoo Oxygen Moisture 180ML</h5>
                                         <h4 class="mt-5"><b>LKR 680.00</b></h4>
                                         <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
                                 </div><!--text-center-->
@@ -120,7 +126,7 @@
                         <div class="col-lg-3 col-md-4  col-sm-6 ">
                                 <div class="center-text mb-30">
                                         <div class="ïmg-200x mlr-auto pos-relative"><img src="images/seller-2-200x200.png" alt=""></div>
-                                        <h5 class="mt-20">Pizza quattro stagioni</h5>
+                                        <h5 class="mt-20">Sunsilk Nourishing SOft and Smooth Shampoo 80ML</h5>
                                         <h4 class="mt-5"><b>LKR 950.00</b></h4>
                                         <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
                                 </div><!--text-center-->
@@ -129,10 +135,10 @@
                         <div class="col-lg-3 col-md-4  col-sm-6 ">
                                 <div class="center-text mb-30">
                                         <div class="ïmg-200x mlr-auto pos-relative">
-                                                <h6  class="ribbon-cont"><div class="ribbon secondary"></div><b>SPECIALITY</b></h6>
+                                                <!--<h6  class="ribbon-cont"><div class="ribbon secondary"></div><b>SPECIALITY</b></h6>-->
                                                 <img src="images/seller-2-200x200.png" alt="">
                                         </div>
-                                        <h5 class="mt-20">pizza Chicken cordon blue</h5>
+                                        <h5 class="mt-20">Lux Purple Lotus Soap 100G</h5>
                                         <h4 class="mt-5"><b>LKR 480.00</b></h4>
                                         <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
                                 </div><!--text-center-->
@@ -141,8 +147,8 @@
                         <div class="col-lg-3 col-md-4  col-sm-6 ">
                                 <div class="center-text mb-30">
                                         <div class="ïmg-200x mlr-auto pos-relative"><img src="images/seller-2-200x200.png" alt=""></div>
-                                        <h5 class="mt-20">Portobello Mushroom Burger</h5>
-                                        <h4 class="mt-5"><b>LKR 380.00</b></h4>
+                                        <h5 class="mt-20">Red Bull Energy Drink Suger Free 250ml</h5>
+                                        <h4 class="mt-5"><b>LKR750.00</b></h4>
                                         <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
                                 </div><!--text-center-->
                         </div><!-- col-md-3 -->
@@ -150,11 +156,16 @@
                         <div class="col-lg-3 col-md-4  col-sm-6 ">
                                 <div class="center-text mb-30">
                                         <div class="ïmg-200x mlr-auto pos-relative">
-                                                <h6 class="ribbon-cont"><div class="ribbon primary"></div><b>OFFER</b></h6>
+                                                <h6 class="ribbon-cont"><div class="ribbon primary"></div><b>OFFER 15%</b></h6>
+                                                <img src="images/seller-2-200x200.png" alt="">
+
+                                        <div class="ïmg-200x mlr-auto pos-relative">
+                                                <h6 class="ribbon-cont"><div class="ribbon primary"></div><b>Beverages</b></h6>
                                                 <img src="images/seller-2-200x200.png" alt="">
                                         </div>
-                                        <h5 class="mt-20">Zinger Burger</h5>
-                                        <h4 class="mt-5"><b>LKR 550.00</b></h4>
+                                        </div>
+                                        <h5 class="mt-20">Cream Soda 1L</h5>
+                                        <h4 class="mt-5"><b>LKR 270.00</b></h4>
                                         <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
                                 </div><!--text-center-->
                         </div><!-- col-md-3 -->
@@ -162,23 +173,20 @@
                         <div class="col-lg-3 col-md-4  col-sm-6 ">
                                 <div class="center-text mb-30">
                                         <div class="ïmg-200x mlr-auto pos-relative">
-                                                <h6 class="ribbon-cont color-black"><div class="ribbon white"></div><b>PLUS SIZE</b></h6>
+                                                <h6 class="ribbon-cont color-black"><div class="ribbon white"></div><b>Featured </b></h6>
+                                                <img src="images/seller-2-200x200.png" alt="">
+                                        <div class="ïmg-200x mlr-auto pos-relative">
+                                                <h6 class="ribbon-cont color-black"><div class="ribbon white"></div><b>products</b></h6>
                                                 <img src="images/seller-2-200x200.png" alt="">
                                         </div>
-                                        <h5 class="mt-20">Snacker Burger</h5>
+                                        </div>
+                                        <h5 class="mt-20">lifebuoy 3 in 1</h5>
                                         <h4 class="mt-5"><b>LKR 250.00</b></h4>
                                         <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
                                 </div><!--text-center-->
                         </div><!-- col-md-3 -->
 
-                        <div class="col-lg-3 col-md-4  col-sm-6 ">
-                                <div class="center-text mb-30">
-                                        <div class="ïmg-200x mlr-auto pos-relative"><img src="images/seller-2-200x200.png" alt=""></div>
-                                        <h5 class="mt-20">Big Boss Burger</h5>
-                                        <h4 class="mt-5"><b>LKR 580.00</b></h4>
-                                        <h6 class="mt-20"><a href="#" class="btn-brdr-primary plr-25"><b>Order Now</b></a></h6>
-                                </div><!--text-center-->
-                        </div><!-- col-md-3 -->
+                        
                 </div><!-- row -->
 
                 <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="#" class="btn-primaryc plr-25"><b>SEE TODAYS MENU</b></a></h6>

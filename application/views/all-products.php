@@ -52,9 +52,9 @@
     echo "<table class='table table-striped'>";
     echo" <thead>
          <tr>
-         <th scope='col'>Menu Name</th>
-         <th scope='col'>Menu Description</th>
-         <th scope='col'>Menu image</th>
+         <th scope='col'>Product Name</th>
+         
+         <th scope='col'>Product image</th>
          <th scope='col'>Price</th>
          <th scope='col'>Category Name</th>
          <th scope='col'>Availability</th>";
@@ -70,9 +70,9 @@
              echo "<th scope='row'>";
              echo $value->product_title;
              echo "</th>";
-         echo "<td>";
-         echo $value->product_description;
-         echo "</td>";
+         //echo "<td>";
+         //echo $value->product_description;
+         //echo "</td>";
          echo "<td>";
          echo "<img width='200px' src='". base_url('assets/images/food/'.$value->product_image) . "'>";
         // echo $value->product_image;
