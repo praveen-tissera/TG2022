@@ -19,7 +19,6 @@
 
 body {
 	align-items: center;
-	background: linear-gradient(120deg,#ff0844, #FFB199);
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -28,9 +27,7 @@ body {
 	height: 100vh;
 	place-items: center;
 }
-nav{
-    background: white;
-}
+
 .form__title {
 	font-weight: 300;
 	margin: 0;

@@ -71,7 +71,7 @@ if (isset($this->session->userdata['logged_in'])) {
                         'type' => 'email',
                         'id' => 'email',
                         'name' => 'email_value',
-                        'class' => 'form-control',
+                        'class' => 'form-control form-control-lg',
                         'placeholder' => 'Email Address:'
                     );
                     echo "<label class='form-label' for='email'> Email Address: </label>";
