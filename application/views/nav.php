@@ -14,10 +14,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url().'appointment' ?>">Doctor Appointment</a>
-            </li>
-           
+        
             <li class="nav-item dropdown">
                 <?php
                 if (isset($this->session->userdata['logged_in'])) {
