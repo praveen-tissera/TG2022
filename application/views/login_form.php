@@ -3,7 +3,7 @@
 <head>
 	<?php $this->load->view('head'); ?>
 	<title>Login Form</title>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/signupstyle.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css\signupstyle.css">
 </head>
 
 <body>
