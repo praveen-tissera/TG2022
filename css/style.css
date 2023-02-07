@@ -86,3 +86,20 @@ left: 262px;
 width: 500px;
 text-align: center;
 }
+
+i.icon{
+    position: absolute; 
+    top: calc(50%);
+    left: 1.25rem;
+        }
+        
+		div.form-floating input.form-control{
+			left: .5rem;
+			padding-left: 3.5rem;
+			border-radius: 10px;
+				}
+			
+		div.form-floating label{
+			left: .5rem;
+			padding-left: 0.5rem
+				}

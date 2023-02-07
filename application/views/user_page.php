@@ -16,8 +16,6 @@ if (isset($this->session->userdata['logged_in'])) {
 <body>
 
 
-    <!-- Navigation -->
-    <?php $this->load->view('nav'); ?>
 
 
 

@@ -9,12 +9,11 @@ if (isset($this->session->userdata['logged_in'])) {
 <head>
     <?php $this->load->view('head'); ?>
     <title>Registration Form</title>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/signupstyle.css">
+    <link rel="stylesheet" type="text/css" href="..\css\signupstyle.css">
 </head>
 
 <body>
-    <!-- Navigation -->
-    <?php $this->load->view('nav'); ?>
+ 
 
 
 
@@ -45,7 +44,7 @@ if (isset($this->session->userdata['logged_in'])) {
                     echo "<div class='row justify-content-center'>";
                     echo "<div class='form-floating'>";
                     echo "<i class='icon fa-solid fa-user fa-lg'></i>";
-
+                    echo "<label class='form-label' for='user'> User Name: </label>";
                     $data = array(
                         'type' => 'text',
                         'id' => 'user',
@@ -53,7 +52,7 @@ if (isset($this->session->userdata['logged_in'])) {
                         'class' => 'form-control form-control-lg',
                         'placeholder' => 'Username:'
                     );
-                    echo "<label class='form-label' for='user'> User Name: </label>";
+                    
 
                     echo form_input($data);
                     echo "<div class='error_msg'>";
@@ -64,9 +63,11 @@ if (isset($this->session->userdata['logged_in'])) {
                     echo "</div>";
                     echo "</div>";
 
+
                     echo "<div class='row justify-content-center'>";
                     echo "<div class='form-floating'>";
                     echo "<i class='icon fa-solid fa-envelope fa-lg'></i>";
+                    echo "<label class='form-label' for='email'> Email Address: </label>";
                     $data = array(
                         'type' => 'email',
                         'id' => 'email',
@@ -74,13 +75,12 @@ if (isset($this->session->userdata['logged_in'])) {
                         'class' => 'form-control form-control-lg',
                         'placeholder' => 'Email Address:'
                     );
-                    echo "<label class='form-label' for='email'> Email Address: </label>";
-
-
+                   
                     echo form_input($data);
                     echo "</div>";
                     echo "</div>";
 
+                    
                     echo "<div class='row justify-content-center'>";
                     echo "<div class='form-floating'>   ";
                     echo "<i class='icon fa-solid fa-key fa-lg'></i>";
