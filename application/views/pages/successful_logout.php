@@ -1,1 +1,1 @@
-<h3>------------- You have successfully LOGGED OUT of the system ----------------</h3>
+	<label class="col-md-7 control-label">You have successfully logout of PlanWiseRMS!</label>

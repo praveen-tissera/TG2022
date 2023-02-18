@@ -1,4 +1,3 @@
-
 <?php echo form_open('search'); ?>
 
 	<select name = "fields" >

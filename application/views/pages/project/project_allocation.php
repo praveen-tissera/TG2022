@@ -1,14 +1,11 @@
 
 <?php echo form_open('allocation'); ?>
 <?php if(isset($query)) { 
-	
+print_r($query);
 ?>
 
 <table>
-	<?php foreach($query as $q){ 
-		
-		
-		?>
+	<?php foreach($query as $q){ ?>
 	<tr>	
 		<td> FIRSTNAME</td>
 		<td> LASTNAME </td>

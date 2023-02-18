@@ -48,6 +48,31 @@ public function set_login()
 
 }
 
+public function day_off()
+{		
+	$accountID = $this->session->accountID;
+
+	$this->load->helper('url');
+	
+	$start = $this->input->post('startDate');
+    $end = $this->input->post('endDate');
+	$formatted_date = date('Y/m/d', strtotime($start));
+	$formatted_date1 = date('Y/m/d', strtotime($end));
+	
+	$datesData = array(
+		'accountID' => $accountID,
+        'leaveType' => $this->input->post('selecType'),
+        'startDate' => $formatted_date,
+        'endDate' => $formatted_date1
+    );
+    
+		$sd = $this->input->post('startDate');
+		$ed = $this->input->post('endDate');
+
+		$d = $this->db->insert('time_off', $datesData);
+		return $d;
+}
+
 public function set_logout(){	
 
 
@@ -68,13 +93,61 @@ public function set_account()
         'email' => $this->input->post('emailAddress'),
         'typeID' => $this->input->post('type')
     );
-    
+	$us = $this->input->post('username');
+	$pw = $this->input->post('password');
+	$mail = $this->input->post('emailAddress');
 
+    $to = "mario.wasilev@gmail.com"; // this is your Email address
+    $from = $mail; // this is the sender's Email address
+    $subject = "Form submission";
+    $subject2 = "Copy of your form submission";
+    $message = "Details of the registrated user: " . $us . "\n\nblabla" . $pw;
+    $message2 = "Hello " . $us . ",\n\n" . "Thank you for completing your registration in PlanWiseRMS. The details of your registratior will be listed below " . "\n\n"
+    . "Username:" . $us . "\n" . "Password:" . $pw . "\n\n\n" . "We hope you enjoy using PlanWiseRMS!";
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    // mail($to,$subject,$message,$headers);
+    // mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
 	
 	$a = $this->db->insert('user_account', $accountData);
 
     return $a;
+	
 }
+	
+	
+	public function join_find_profile($usrname){
+				
+		$this->db-> select('*');
+		$this->db->	from('person');
+		$this->db-> join('user_account', 'person.accountID = user_account.accountID');
+		$this->db-> join('address', 'person.addressID = address.addressID');
+		$this->db->	where('user_account.username',$usrname);
+		$this->db-> limit(1);
+		
+		$query = $this->db->get();
+		
+		if($query-> num_rows() != 1){
+			return;
+		}
+		
+		return $query->result_array();
+		
+			
+	}
+	
+	
+public function get_all_profiles()
+{
+	$this->db-> select('*');
+	$this->db->	from('person');
+	$this->db->	join('user_account','user_account.accountID = person.accountID');
+	return $this->db->get()->result();
+}
+	
+
+
 
 	public function check_for_profile(){
 		$accountID = $this->session->accountID;
@@ -92,10 +165,17 @@ public function set_account()
 		return 1;
 	}
 
-	public function join_load_profile(){
+	public function join_load_profile($username){
 		
-		$accountID = $this->session->accountID;
-		
+		 	if(isset($usrname)){
+       	$this->db->select('accountID');
+			$this->db->from('user_account');
+			$this->db->where('username', $usrname);
+			$accountID = $this->db->get()->result()[0]->accountID;
+       }else {
+       		$accountID = $this->session->accountID;
+       	}
+       	
 		$this->db-> select('*');
 		$this->db->	from('person');
 		$this->db-> join('user_account', 'person.accountID = user_account.accountID');
@@ -137,27 +217,7 @@ public function set_account()
 			
 	}
 	
-	
-	public function join_find_profile($usrname){
-				
-		$this->db-> select('*');
-		$this->db->	from('person');
-		$this->db-> join('user_account', 'person.accountID = user_account.accountID');
-		$this->db-> join('address', 'person.addressID = address.addressID');
-		$this->db->	where('user_account.username',$usrname);
-		$this->db-> limit(1);
-		
-		$query = $this->db->get();
-		
-		if($query-> num_rows() != 1){
-			return;
-		}
-		
-		return $query->result_array();
-		
-			
-	}
-	
+
 	public function load_profile(){
 		$accountID = $this->session->accountID;
 		
@@ -271,7 +331,7 @@ public function set_profile()
     
    $accountID = $this->session->accountID;
    //check if already registerred
-	$this->db->select('personID');
+	$this->db->select('accountID');
 	$this->db->	from('person');
 	$this->db->	where('accountID',$accountID);
 	$this->db->limit(1);
@@ -285,7 +345,6 @@ public function set_profile()
    
     
 	$addressData = array(
-			'country' => $this->input->post('country'),
 			'city' => $this->input->post('city'),
 			'postcode' => $this->input->post('postcode'),
 			'streetName' => $this->input->post('streetName'),
@@ -349,6 +408,42 @@ public function set_profile()
 
     return $a; */
 }
+
+	public function join_profile_skills($usrname){
+				
+		$this->db-> select('*');
+		$this->db->	from('person');
+		$this->db-> join('user_skills', 'user_skills.accountID = person.accountID');
+		$this->db-> join('skills', 'user_skills.skillID = skills.skillID');
+		$this->db-> join('user_account', 'user_account.accountID = person.accountID');
+		$this->db->	where('user_account.username',$usrname);
+		
+		$query = $this->db->get();
+		
+		if($query-> num_rows() <1){
+			return;
+		}
+		
+		return $query->result();
+		
+	}
+    
+    public function add_profile_skills(){
+        
+        $data = array(
+            'accountID' => $this->input->post('skillaccID'),
+            'skillID' => $this->input->post('skillID'),
+            'skillLevel' => $this->input->post('skillLevel'),
+            'experienceYears' => $this->input->post('skillExperience')
+        );
+        foreach(($this->input->post('skill')) as $skills){
+            $this->db->insert('user_skills', $skills);
+//            var_dump($skills);                          
+        }
+//        var_dump($this->input->post('skill'));
+
+    }
+
 
 
 public function profile_search($option, $search){
@@ -495,5 +590,37 @@ public function profile_search($option, $search){
 	*/
 	
 	}
+	
+	
+	public function availability($usrname){
+			 	if(isset($usrname)){
+       	$this->db->select('accountID');
+			$this->db->from('user_account');
+			$this->db->where('username', $usrname);
+			$accountID = $this->db->get()->result()[0]->accountID;
+
+       }else {
+
+       		$accountID = $this->session->accountID;
+       	}
+			$this->db->select('startDate, endDate');
+			$this->db->from('time_off');
+			$this->db->where('accountID', $accountID);
+			$this->db->order_by('endDate', 'DESC');
+			$this->db->limit(1);
+			$time_off = $this->db->get()->result_array();
+
+			return $time_off;
+		}
+
+
+public function getAccountID($username){
+	$this->db->select('accountID');
+	$this->db->from('user_account');
+	$this->db->where('username',$username);
+	return $this->db->get()->result()[0]->accountID;
+	
+	}
+	
 
 }

@@ -1,3 +1,56 @@
+a:link {
+color: black;
+}
+th {
+background-color: #1f497a;
+color: white;
+}
+
+td	{
+background-color: white;
+}
+body{
+background-image: url("../img/wall4.png");
+background-repeat: repeat;
+font-family: 'Oxygen', sans-serif;
+	}
+
+h1 {
+    text-shadow: 6px 6px 10px #ffffff;
+}
+
+.jumbotron {
+background-color: white;
+/* 
+how to do transperant images, change the last one.
+background-color: rgba(232,232,238,0.61)!important;
+background-repeat: repeat;
+background-blend-mode: color; */
+}
+
+#shadow {
+-webkit-box-shadow: 0px 8px 90px -8px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 8px 90px -8px rgba(0,0,0,0.75);
+box-shadow: 0px 8px 90px -8px rgba(0,0,0,0.75);
+}
+
+.navbar-nav li a  {
+  color: #59ABE3;
+}
+
+#navBack {
+margin: 20px;
+height: 50px;
+}
+
+#myContainerr {
+margin-left: 15px;
+padding-right: 15px;
+padding-left: 15px;
+margin-right: 15px;
+}
+
+
 #subTitle
     {color: rgb(84, 125, 191);
     text-align:center;
@@ -8,6 +61,16 @@ h5 {
     text-align: center;
 }
 
+.selected{
+    color:white;
+}
+
+.skill{
+    color:black;
+    }
+.buttons{
+margin: 15px;
+}
 
 .mycontent-left {
   margin-left: 15px;
@@ -26,10 +89,6 @@ h5 {
   border-image-width: 3;
 }
 
-#shadow {
--webkit-box-shadow: 5px 5px 5px 4px #8CC9FF;
-box-shadow: 5px 5px 5px 4px #8CC9FF;
-}
 
 .navbar{
     padding-right: 15px;
@@ -85,18 +144,8 @@ box-shadow: 5px 5px 5px 4px #8CC9FF;
    margin: 0 !important;
 }
 
-.skill .selected {
-	background: #007;
-	color:#fff;
-}
-
 .btn{
 float: right;
-padding-right: 25px;
-margin-right: 25px;
-margin-bottom: 15px;
-margin-top: 25px;
-color:#97DFDB;
 }
 
 .butn{
@@ -154,7 +203,9 @@ margin-bottom: 0;}
 .profile-head ul li a { color:#ffffff;}
 .profile-head h6 {width: 100%;text-align: center;font-weight: 100;color: #fff;font-size: 15px;text-transform: uppercase;margin-bottom: 0;}
 
-
+.navbar-brand {
+margin-bottom:5px;
+}
 .nav-tabs {margin: 0;padding: 0;border: 0;}
 .nav-tabs > li > a {background: #DADADA;border-radius: 0;
     box-shadow: inset 0 -8px 7px -9px rgba(0,0,0,.4),-2px -2px 5px -2px rgba(0,0,0,.4);}
@@ -210,7 +261,7 @@ box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.75);}
 
 .navbar-inverse .drop_menu {display: block;visibility: visible;width: 110px;height:1000px;padding:0px 20px;position: absolute;right:-100px;
 transition:all ease 0.5s;border-top: 0px solid;cursor: pointer;}
-.navbar-brand {padding: 0;margin-left: 10px !important;}
+.navbar-brand {padding: 0;margin-left: 10px !important; height: 200px;}
 a.menu { display:block !important;margin: 9px 2px;float: right;color: rgba(255, 102, 0, 0.98); border:0px solid; background:none; font-size:30px;width:27px;position: relative;
 cursor:pointer;}
 a.menu:hover, a.menu:focus { color:rgb(0, 4, 51);}

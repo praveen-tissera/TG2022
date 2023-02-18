@@ -83,8 +83,8 @@
             <h2 id="h01" style="color: white;">Project Leader:  </h2>
             <p id="p01"> <?php echo $info[0]['firstname'] ?> <?php echo $info[0]['lastname']?></p>
             <p><?php echo $info[0]['email'];?></p>
-            <h2 id="h01" style="color: white;">Description: </h2>
-            <!-- <p> <?php echo $info[0]['description']; ?></p> -->
+            <!-- <h2 id="h01" style="color: white;">Description: </h2>
+            <p> <?php echo $info[0]['description']; ?></p> -->
             <br>
             <ul>
               <li><span class="glyphicon glyphicon-calendar"></span> <?php echo $info[0]['startDate']; ?> - <?php echo $info[0]['endDate'];?></li>

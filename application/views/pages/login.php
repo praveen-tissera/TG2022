@@ -9,7 +9,7 @@
 
 	 <div class="container">
     <div id="shadow">
-      <div class="jumbotron">
+      <div class="jumbotron" style="">
         <div id="subTitle" <h3>PlanWise ID </h3>
         </div>
         <h5>Sign into your PlanWise account</h5>
@@ -25,7 +25,9 @@
           <div class="checkbox">
             <label><input type="checkbox"> Remember me</label>
           </div>
+          <div id="logButton">
           <button type="submit" class="btn btn-default">Submit</button>
+		  </div>
         </form>
       </div>
     </div>

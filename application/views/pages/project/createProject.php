@@ -1,70 +1,79 @@
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js">
+</script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
- 
 
 
-    <div class="alert alert-info text-center" role="alert">
-        <h3>Please fill in the details below</h3>
-        <strong>( * marks a required field)</strong>
-        <h4> <?php echo validation_errors(); ?> </h4>
-    </div>
-    <?php echo form_open('create_project'); ?>
+<div class="alert alert-info text-center" role="alert">
+    <h3>Please fill in the details below</h3>
+    <strong>( * marks a required field)</strong>
+    <h4> <?php echo validation_errors(); ?> </h4>
+</div>
+<?php echo form_open('create_project'); ?>
     <div class="createProject container-fluid col-sm-10">
         <div class="col-sm-4">
 
             <label for="projectTitle">* Project Name:</label>
             <input type="text" class="form-control" name="projectTitle">
             <br>
-            <label for="projectEmail">* Project Email:</label>
-            <input type="text" class="form-control" name="projectEmail">
-            <br>
             <label for="projectType">Project Type:</label>
             <input type="text" class="form-control" name="projectType">
             <br>
-            <div class='input-group date' >
+            <div class='input-group date'>
                 <label for="startDate">* Start Date:</label>
                 <div class="form-group">
-                    <div class='input-group date' >
+                    <div class='input-group date'>
                         <input type='text' class="form-control" id="datepicker" name="startDate" />
                         </span>
                     </div>
                 </div>
                 <label for="endDate">* End Date:</label>
                 <div class="form-group">
-                    <div class='input-group date' >
+                    <div class='input-group date'>
                         <input type='text' class="form-control" id="datepicker1" name="endDate" />
                         </span>
                     </div>
                 </div>
             </div>
-            
- <script>
-  $( function() 
-  {$( "#datepicker" ).datepicker();
-    $( "#datepicker" ).datepicker( "option", "dateFormat", "dd/mm/yy");
-  } );
-  
-  $( function() {
-    $( "#datepicker1" ).datepicker();
-    $( "#datepicker1" ).datepicker( "option", "dateFormat", "dd/mm/yy");
-    
-  } );
-  
-   </script>
-            
-            
-            
-          <div class="form-group">
-            <label for="projectLocation">* Loaction:</label>
-            
-                        <input type="text" class="form-control" id="loca1" name="streetname" value="">
-                        <br>
-                        <input type="text" class="form-control" id="loca2" name="city" value="">
-                        <br>
-                        <input type="text" class="form-control" id="loca4" name="postcode" value="">
-                        <br>
-                        <input type="text" class="form-control" id="loca3" name="country" value="">
+
+            <script>
+                $("#datepicker").datepicker({
+                    dateFormat: "dd/mm/yy",
+                    minDate: 0,
+                    onSelect: function(date) {
+                        var datepicker1 = $('#datepicker1');
+                        var startDate = $(this).datepicker('getDate');
+                        var minDate = $(this).datepicker('getDate');
+                        datepicker1.datepicker('setDate', minDate);
+                        startDate.setDate(startDate.getDate());
+                        datepicker1.datepicker('option', 'minDate', minDate);
+                        $(this).datepicker('option', 'minDate', minDate);
+                    }
+                });
+
+                $(function() {
+                    $("#datepicker1").datepicker();
+                    $("#datepicker1").datepicker("option", "dateFormat", "dd/mm/yy");
+
+                });
+
+            </script>
+
+
+
+            <div class="form-group">
+                <label for="projectLocation">* Loaction:</label>
+
+                <input type="text" class="form-control" id="loca1" name="streetName" value="">
+                <br>
+                <input type="text" class="form-control" id="loca2" name="city" value="">
+                <br>
+                <input type="text" class="form-control" id="loca4" name="postcode" value="">
+                <br>
+                <input type="text" class="form-control" id="loca3" name="country" value="">
+                <br>
+                <input type="text" class="form-control" placeholder="Building Number" id="loca5" name="buildingNumber" value="">
+
             </div>
             <div id="map" style="width:40%x;height:400px;background:White">
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7XTpRX5A-G83XNzV_7ORF-OYKfepSD4g&callback=myOptions"></script>
@@ -102,26 +111,26 @@
                                 infowindow.open(map, marker);
                                 var addresslocaion = results[1].formatted_address;
                                 //Note  when extracting the location for database input use the variable "addresslocation"
-                                
-                                
-                                
+
+
+
                                 //Splits up location string and applys the vaules to hidden html inputs
                                 var getcode = addresslocaion.match('[A-Za-z]{1,2}[0-9Rr][0-9A-Za-z]? [0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2}');
                                 var postcode = getcode[0];
-                                var removePost = addresslocaion.replace(postcode,'');
+                                var removePost = addresslocaion.replace(postcode, '');
                                 var values = removePost.split(',');
                                 var streetname = values[0];
                                 var city = values[1];
                                 var country = values[2];
-                                
-                                 $("#loca1").val(streetname);
-                                 $("#loca2").val(city);
-                                 $("#loca3").val(country);
-                                 $("#loca4").val(postcode);
-                                
-                                
-                                
-                                
+
+                                $("#loca1").val(streetname);
+                                $("#loca2").val(city);
+                                $("#loca3").val(country);
+                                $("#loca4").val(postcode);
+
+
+
+
                             }
                         });
 
@@ -132,8 +141,8 @@
                     google.maps.event.addListener(map, 'click', function(event) {
                         placeMarker(event.latLng)
                     });
-                </script>
 
+                </script>
 
 
             </div>
@@ -147,7 +156,7 @@
             <label for="projectBudget">* Budget:</label>
             <input type="text" class="form-control" name="projectBudget">
             <br>
-
+            <!--
             <div class="row">
 				<div class="col-lg-12 noPadding ">
 					<div class="input-group " id="skillSelect">
@@ -176,10 +185,10 @@
 						</div>
 					</div>
 				</div>
-
-            </div>
-            <br>
-
+-->
+        </div>
+        <br>
+        <!--
             <div class="">
                 <div class = "panel panel-info">
                     <div class = "panel-heading">
@@ -197,51 +206,46 @@
                 
               
             </div>
+-->
 
+        <br>
+        <!--            TAKE SELECTED from below AND INSERT above-->
 
-            <br>
-            <!--            TAKE SELECTED from below AND INSERT above-->
+        <br>
+        <br>
 
-            <br>
-            <br>
+        <script>
+            $("#addSkill").click(function() {
+                $("#projectSkills").append(' <li value="' + $("#skillName").val() + ' " class="list-group-item skill ">' + $("#skillName").val() + '<span class="label label-primary pull-right">' + ($("#skillLevel option:selected").index() + 1) + '</span><span class="label label-success pull-right">' + $("#skillNumPeople").val() + '</span>' + '<input type="hidden"  name="skillID[]" value="' + ($("#skillName option:selected").index() + 1) + ' "/> ' + '<input type="hidden"  name="skillLevel[]" value="' + ($("#skillLevel option:selected").index() + 1) + ' "/> ' + '<input type="hidden"  name="skillNumPeople[]" value="' + $("#skillNumPeople").val() + ' "/> ' + '</li>');
+            });
+            $("#delSkill").click(function() {
+                $("#projectSkills .selected").remove();
+            });
 
-            <script>
-                $("#addSkill").click(function() {
-                    $("#projectSkills").append(' <li value="'+ $("#skillName").val() +' " class="list-group-item skill ">' + $("#skillName").val() + '<span class="label label-primary pull-right">' 
-                    + ($("#skillLevel option:selected").index() + 1 )+ '</span><span class="label label-success pull-right">' 
-                    + $("#skillNumPeople").val() + '</span>'
-                    + '<input type="hidden"  name="skillID[]" value="'+ ( $("#skillName option:selected").index() + 1 )+' "/> '
-					+ '<input type="hidden"  name="skillLevel[]" value="'+ ( $("#skillLevel option:selected").index() + 1 )+' "/> '
-                    + '<input type="hidden"  name="skillNumPeople[]" value="'+ $("#skillNumPeople").val()+' "/> '
-					+ '</li>');
-                });
-                $("#delSkill").click(function() {
-					$("#projectSkills .selected").remove();
-                });
-            
-                $("#projectSkills").on("click",".skill",function(e) {
-                    $(this).parent().children().removeClass("selected");
-                    $(this).addClass("selected");
-                    //~ alert($(this) 
-                            //~ .clone()    //clone the element
-                            //~ .children() //select all the children
-                            //~ .remove()   //remove all the children
-                            //~ .end()  //again go back to selected element
-                            //~ .text() );
+            $("#projectSkills").on("click", ".skill", function(e) {
+                $(this).parent().children().removeClass("selected");
+                $(this).addClass("selected");
+                //~ alert($(this) 
+                //~ .clone()    //clone the element
+                //~ .children() //select all the children
+                //~ .remove()   //remove all the children
+                //~ .end()  //again go back to selected element
+                //~ .text() );
 
-                });
-            </script>
+            });
 
-        </div>
-   		
+        </script>
+
+    </div>
+
     </div>
     <div class="col-sm-2">
-		<div>
-			<button type="button" class="btn btn-danger btn-lg pull-left">Go Back</button>
-			<button type="submit" class="btn btn-success btn-lg">Go Forward</button>
-		</div>
-	</div>
+        <div>
+            <button type="button" class="btn btn-danger btn-lg pull-left">Go Back</button>
+            <button type="submit" class="btn btn-success btn-lg">Go Forward</button>
+        </div>
+    </div>
     </form>
-</body>
+    </body>
 
-</html>
+    </html>

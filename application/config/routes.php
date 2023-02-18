@@ -62,15 +62,27 @@ $route['search'] = 'page_functions/search';
 $route['project_allocation'] = 'ProjectCreate/allocation';
 $route['create_project'] = 'ProjectCreate/projectCreate';
 $route['create_tasks'] = 'ProjectCreate/createTasks';
-$route['admin'] = 'page_functions/adminreg';
-$route['view_profile'] = 'page_functions/view_profile';
-$route['find_profile/(:any)'] = 'page_functions/find_profile/$1';
-$route['logout'] = 'login/logout';
-$route['(:any)'] = 'page_functions/view/$1';
-$route['default_controller'] = 'page_functions/index';
 
+$route['projects'] = 'page_functions/view_projects';
+$route['profiles'] = 'page_functions/view_profiles';
 $route['view_project'] = 'page_functions/view_project';
 $route['find_project/(:any)'] = 'page_functions/find_project/$1';
 $route['edit_project/(:any)'] = 'page_functions/edit_project/$1';
+$route['edit_tasks/(:any)'] = 'page_functions/edit_tasks/$1';
+$route['interest_project/(:any)'] = 'page_functions/interest_project/$1';
+$route['search_project'] = 'page_functions/search_project';
+$route['my_project'] = 'page_functions/view_my_project';
+$route['role_select/(:any)'] = 'page_functions/role_select/$1';
+
+
+
+$route['admin'] = 'page_functions/adminreg';
+
+$route['view_profile'] = 'page_functions/view_profile';
+$route['find_profile/(:any)'] = 'page_functions/find_profile/$1';
+$route['add-skills/(:any)'] = 'page_functions/admin_fill_skills/$1';
+
+$route['logout'] = 'login/logout';
+$route['default_controller'] = 'page_functions/index';
 
 
