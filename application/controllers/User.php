@@ -694,31 +694,7 @@ echo '</div>';*/
 		}
 	
 	}
-public function showAllProductsCategory(){
-		
-		$products_category = $this->User_model->load_all_products_category();
-		// foreach ($products as $key => $value) {
-			
-		// 	$category_name = $this->User_model->category_name($value->category_id);
-		
-		// 	$products[$key]->category_name = $category_name[0]->category_name;
-		
-		// }
-		$data['all_products_category'] = $products_category;
-		$success = $this->session->flashdata('success_message_display');
-		$error = $this->session->flashdata('error_message_display');
-		if(!empty($success)){
-			$data['success_message_display'] = $success;
-			$this->load->view('all-products-category',$data);
-		}else if(!empty($error)){
-			$data['error_message_display'] = $error;
-			$this->load->view('all-products-category',$data);
-		}
-		else{
-			$this->load->view('all-products-category',$data);
-		}
-	
-	}
+
 	/**
 	 * show all items
 	 */
