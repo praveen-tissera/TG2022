@@ -100,7 +100,7 @@
                                         
 
                                         <div class="ïmg-200x mlr-auto pos-relative">
-                                                <h6 class="ribbon-cont"><div class="ribbon primary"></div><b>Uniliver products</b></h6>
+                                                <h4><u>Uniliver products</u></h4>
                                                 <img src="images/seller-2-200x200.png" alt="">
                                         </div>
                                         </div>
@@ -156,7 +156,7 @@
                                                 <img src="images/seller-2-200x200.png" alt="">
 
                                         <div class="ïmg-200x mlr-auto pos-relative">
-                                                <h6 class="ribbon-cont"><div class="ribbon primary"></div><b>Beverages</b></h6>
+                                                <h4><u>Beverages</u></h4>
                                                 <img src="images/seller-2-200x200.png" alt="">
                                         </div>
                                         </div>
@@ -169,11 +169,9 @@
                         <div class="col-lg-3 col-md-4  col-sm-6 ">
                                 <div class="center-text mb-30">
                                         <div class="ïmg-200x mlr-auto pos-relative">
-                                                <h6 class="ribbon-cont color-black"><div class="ribbon white"></div><b>Featured </b></h6>
-                                                <img src="images/seller-2-200x200.png" alt="">
+                                        <h4><u>Featured Products</u></h4>
                                         <div class="ïmg-200x mlr-auto pos-relative">
-                                                <h6 class="ribbon-cont color-black"><div class="ribbon white"></div><b>products</b></h6>
-                                                <img src="images/seller-2-200x200.png" alt="">
+                                                
                                         </div>
                                         </div>
                                         <h5 class="mt-20">lifebuoy 3 in 1</h5>

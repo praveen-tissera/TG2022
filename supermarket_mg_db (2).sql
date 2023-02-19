@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 12, 2023 at 08:29 AM
+-- Generation Time: Feb 19, 2023 at 07:57 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -40,21 +40,9 @@ CREATE TABLE `tbl_cart` (
 --
 
 INSERT INTO `tbl_cart` (`order_id`, `row_id`, `product_id`, `user_id`, `quantity`) VALUES
-(1, 1, 2, 1, 1),
-(1, 2, 1, 1, 2),
-(2, 3, 2, 1, 1),
-(3, 4, 1, 1, 2),
-(4, 5, 1, 1, 2),
-(5, 6, 2, 1, 1),
-(5, 7, 1, 1, 1),
-(6, 8, 2, 1, 1),
-(7, 9, 1, 1, 1),
-(8, 10, 2, 1, 1),
 (9, 11, 10, 1, 5),
 (10, 12, 9, 1, 1),
 (11, 13, 2, 1, 3),
-(12, 14, 2, 2, 1),
-(13, 15, 10, 3, 1),
 (13, 16, 5, 3, 3),
 (13, 17, 13, 3, 1),
 (14, 18, 2, 4, 4),
@@ -62,8 +50,7 @@ INSERT INTO `tbl_cart` (`order_id`, `row_id`, `product_id`, `user_id`, `quantity
 (18, 20, 25, 8, 1),
 (19, 21, 25, 8, 1),
 (20, 22, 25, 9, 1),
-(22, 23, 25, 9, 1),
-(23, 24, 25, 10, 1);
+(22, 23, 25, 9, 1);
 
 -- --------------------------------------------------------
 
@@ -115,6 +102,26 @@ CREATE TABLE `tbl_order` (
   `dispatch_time` time NOT NULL,
   `payment_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_order`
+--
+
+INSERT INTO `tbl_order` (`order_id`, `user_id`, `total`, `order_place_date`, `order_place_time`, `pickup_time`, `staff_id`, `order_placed`, `order_status`, `dispatch_time`, `payment_id`) VALUES
+(9, 2, 5600, '2019-02-18', '22:12:00', '16:45:00', 2, 'review', 'new', '00:00:00', 1),
+(10, 3, 3960, '2019-02-18', '23:43:00', '17:30:00', 2, 'placed', 'new', '00:00:00', 1),
+(11, 2, 4000, '2019-02-19', '00:19:00', '17:00:00', 1, 'placed', 'new', '00:00:00', 2),
+(12, 4, 3000, '2019-02-19', '11:26:00', '17:30:00', 2, 'placed', 'new', '00:00:00', 3),
+(13, 6, 3300, '2019-02-19', '21:15:00', '17:30:00', 2, 'placed', 'new', '00:00:00', 2),
+(14, 6, 3000, '2019-02-19', '21:19:00', '17:15:00', 1, 'placed', 'new', '00:00:00', 3),
+(15, 6, 2000, '2019-02-19', '22:04:00', '16:45:00', 1, 'placed', 'new', '00:00:00', 4),
+(16, 6, 3000, '2019-02-19', '23:09:00', '17:00:00', 1, 'placed', 'new', '00:00:00', 5),
+(17, 6, 720, '2020-01-21', '20:16:00', '09:15:00', 1, 'placed', 'processing', '00:00:00', 5),
+(18, 8, 1, '2020-01-26', '10:26:00', '11:15:00', 2, 'placed', 'new', '00:00:00', 1),
+(19, 8, 1, '2020-01-26', '10:39:00', '11:00:00', 2, 'placed', 'completed', '00:00:00', 4),
+(20, 9, 1, '2020-02-03', '23:08:00', '10:30:00', 1, 'placed', 'dispatch', '17:42:00', 3),
+(21, 9, 0, '2023-01-25', '23:23:00', '08:30:00', 1, 'placed', 'new', '00:00:00', 3),
+(22, 9, 0, '2023-01-25', '23:28:00', '08:30:00', 1, 'placed', 'new', '00:00:00', 4);
 
 -- --------------------------------------------------------
 
@@ -168,7 +175,7 @@ CREATE TABLE `tbl_product` (
 --
 
 INSERT INTO `tbl_product` (`product_id`, `category_id`, `product_title`, `product_image`, `availability`, `currency`, `price`) VALUES
-(1, 1, 'Banana', 'banana.png', 'yes', 'LKR', '350.00'),
+(1, 1, 'Passion Fruit', 'passion.png', 'yes', 'LKR', '350.00'),
 (2, 6, 'Organic Pumpkin', 'pumpkin.png', 'yes', 'LKR', '650.00'),
 (3, 6, 'Organic Carrots', 'carrots.png', 'yes', 'LKR', '290.00'),
 (4, 6, 'Pre Packed Big Onions', 'onions.png', 'yes', 'LKR', '450.00'),
@@ -192,10 +199,11 @@ INSERT INTO `tbl_product` (`product_id`, `category_id`, `product_title`, `produc
 (23, 5, 'White Mullet', 'fish.png', 'yes', 'LKR', '444.00'),
 (24, 1, 'Apple - Fuji', 'apple.png', 'yes', 'LKR', '450.00'),
 (25, 1, 'Grapes - Black', '1675314549grapes.png', 'yes', 'LKR', '150.00'),
-(26, 1, 'Melon - Red Fantasy', 'melon.png', 'no', 'LKR', '190.00'),
+(26, 1, 'Melon - Red Fantasy', 'watermelon.png', 'yes', 'LKR', '190.00'),
 (27, 1, 'Pineapple', 'pineapple.png', 'yes', 'LKR', '560.00'),
-(28, 0, 'Wykefarm Sliced Matured C/Cheddar 160g', 'cheese.png', 'no', 'LKR', '2.00'),
-(29, 10, 'Wykefarm Sliced Matured C/Cheddar 160g', 'cheese.png', 'no', 'LKR', '2.00');
+(30, 7, 'Wykefarm Sliced Matured C/Cheddar 160g', 'cheese.png', 'no', 'LKR', '2500.00'),
+(31, 1, 'Mango - Tjc', 'mango.png', 'yes', 'LKR', '1350.00'),
+(32, 4, 'Kist Ride Classic 250ml', 'energydrink.png', 'yes', 'LKR', '390.00');
 
 -- --------------------------------------------------------
 
@@ -287,7 +295,8 @@ CREATE TABLE `tbl_staff` (
 
 INSERT INTO `tbl_staff` (`staff_id`, `username`, `title`, `first_name`, `last_name`, `password`, `staff_role`) VALUES
 (1, 'chamara', 'mr', 'chamara', 'chaturanga', '123', 'staff'),
-(2, 'samera', 'mr', 'samera', 'perera', '123', 'manager');
+(2, 'samera', 'mr', 'samera', 'perera', '123', 'manager'),
+(3, 'dumidu', 'mr', 'dumidu', 'jayakody', '123', 'staff');
 
 -- --------------------------------------------------------
 
@@ -345,7 +354,9 @@ INSERT INTO `tbl_user` (`user_id`, `email`, `title`, `first_name`, `last_name`, 
 (7, 'p@gmail.com', 'Mr', 'praveen', 'tissa', '0713691344', '2020-01-25', '', 'guest', 'active'),
 (8, 'ptissera@gmail.com', 'Mr', 'praveen', 'tissera', '0713691344', '2020-01-25', '123456', 'register', 'active'),
 (9, 'dammith@gmail.com', 'Mr', 'dammith', 'asanka', '0712563544', '2020-02-03', '', 'guest', 'active'),
-(10, 'ranminijayawardena@gmail.com', 'Mr', 'Randithi', 'Jayawardena', '0778964758', '2023-01-29', '', 'guest', 'active');
+(10, 'ranminijayawardena@gmail.com', 'Mr', 'Randithi', 'Jayawardena', '0778964758', '2023-01-29', '', 'guest', 'active'),
+(11, 'methni.20211578@iit.ac.lk', 'Mr', 'Randithi', 'Jayawardena', '0778964758', '2023-02-12', '', 'guest', 'active'),
+(12, 'bandu@gmail.com', 'Mrs', 'Ranmini', 'Jayawardena', '0710599566', '2023-02-12', '123', 'register', 'active');
 
 --
 -- Indexes for dumped tables
@@ -355,7 +366,10 @@ INSERT INTO `tbl_user` (`user_id`, `email`, `title`, `first_name`, `last_name`, 
 -- Indexes for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  ADD PRIMARY KEY (`row_id`);
+  ADD PRIMARY KEY (`row_id`),
+  ADD KEY `order_id` (`order_id`),
+  ADD KEY `product_id` (`product_id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `tbl_item`
@@ -367,7 +381,10 @@ ALTER TABLE `tbl_item`
 -- Indexes for table `tbl_order`
 --
 ALTER TABLE `tbl_order`
-  ADD PRIMARY KEY (`order_id`);
+  ADD PRIMARY KEY (`order_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `staff_id` (`staff_id`),
+  ADD KEY `payment_id` (`payment_id`);
 
 --
 -- Indexes for table `tbl_payments`
@@ -380,7 +397,8 @@ ALTER TABLE `tbl_payments`
 -- Indexes for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  ADD PRIMARY KEY (`product_id`);
+  ADD PRIMARY KEY (`product_id`),
+  ADD KEY `category_id` (`category_id`);
 
 --
 -- Indexes for table `tbl_product_catagory`
@@ -392,7 +410,8 @@ ALTER TABLE `tbl_product_catagory`
 -- Indexes for table `tbl_product_item`
 --
 ALTER TABLE `tbl_product_item`
-  ADD PRIMARY KEY (`tbl_id`);
+  ADD PRIMARY KEY (`tbl_id`),
+  ADD KEY `item_id` (`item_id`);
 
 --
 -- Indexes for table `tbl_promotion`
@@ -452,7 +471,7 @@ ALTER TABLE `tbl_payments`
 -- AUTO_INCREMENT for table `tbl_product`
 --
 ALTER TABLE `tbl_product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `tbl_product_catagory`
@@ -476,7 +495,7 @@ ALTER TABLE `tbl_promotion`
 -- AUTO_INCREMENT for table `tbl_staff`
 --
 ALTER TABLE `tbl_staff`
-  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_suppliers`
@@ -488,7 +507,39 @@ ALTER TABLE `tbl_suppliers`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tbl_cart`
+--
+ALTER TABLE `tbl_cart`
+  ADD CONSTRAINT `tbl_cart_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `tbl_order` (`order_id`),
+  ADD CONSTRAINT `tbl_cart_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `tbl_product` (`product_id`),
+  ADD CONSTRAINT `tbl_cart_ibfk_3` FOREIGN KEY (`user_id`) REFERENCES `tbl_user` (`user_id`);
+
+--
+-- Constraints for table `tbl_order`
+--
+ALTER TABLE `tbl_order`
+  ADD CONSTRAINT `tbl_order_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `tbl_user` (`user_id`),
+  ADD CONSTRAINT `tbl_order_ibfk_2` FOREIGN KEY (`staff_id`) REFERENCES `tbl_staff` (`staff_id`),
+  ADD CONSTRAINT `tbl_order_ibfk_3` FOREIGN KEY (`payment_id`) REFERENCES `tbl_payments` (`payment_id`);
+
+--
+-- Constraints for table `tbl_product`
+--
+ALTER TABLE `tbl_product`
+  ADD CONSTRAINT `tbl_product_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `tbl_product_catagory` (`catagory_id`);
+
+--
+-- Constraints for table `tbl_product_item`
+--
+ALTER TABLE `tbl_product_item`
+  ADD CONSTRAINT `tbl_product_item_ibfk_1` FOREIGN KEY (`item_id`) REFERENCES `tbl_item` (`item_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
