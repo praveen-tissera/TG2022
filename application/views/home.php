@@ -50,18 +50,14 @@
 
                 <div class="row">
                         <div class="col-md-6">
-                                <p class="mb-30">TREAT TOO Restaurant, based in Trinco, Srilanka 
-                                        is one of the branded in Srilanka that can boast a rich,
-                                         decades-long history of success and innovation.
-                                          It all started with one cook who created a soon-to-be world-famous
-                                           recipe more than 70 years ago, a list of secret herbs and spices 
-                                           scratched out on the back of the door to his kitchen. 
-                                           That cook was Mr. Lionel Cooray Hettiarachchi, of course, 
-                                           and now TREAT TOO is the lankan’s most popular pizzeria restaurant chain,
-                                            specializing in that same Original Recipe® along with Extra Crispy™ 
-                                            , home-style sides and buttermilk biscuits. And you know what? There’s still
-                                               a cook in a kitchen in every last one of them, freshly preparing
-                                                delicious, complete family meals at affordable prices.
+                                <p class="mb-30">Thousands of Sri Lankans are served daily by Mran, which has been owned and operated by Sri Lankans for the past 15 years.
+                                         Mran provides the freshest products possible while still offering excellent value.
+                                        Around 335 products make up our ever-expanding own label product portfolio, and Mran also sells a wide range of products that are uniquely sourced and sold at our supermarkets to give discerning customers a variety of options. 
+                                        Mran grocery store has introduced an online shopping platform that offers consumers the option of home delivery and click and collect,
+                                         Mran also uses cutting-edge systems to ensure that operations run smoothly and that customers always have access to the products they need.
+                                        Our team of over 4500 individuals, who have a passion for food, especially fresh food, is the key to our success as we work to give our customers a pleasant shopping experience and our stakeholders enduring partnerships.
+                                         Keells sources fresh food from farmers and ensures that it gets to the stores in 24 hours, delivering on the promise of freshness, 
+                                         with the help of over 4 collection centers in key locations. 
                                          </p>
                         </div><!-- col-md-6 -->
 
@@ -189,7 +185,7 @@
                         
                 </div><!-- row -->
 
-                <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="#" class="btn-primaryc plr-25"><b>SEE TODAYS MENU</b></a></h6>
+                <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="#" class="btn-primaryc plr-25"><b>SEE Products</b></a></h6>
         </div><!-- container -->
 </section>
 

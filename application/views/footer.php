@@ -1,11 +1,16 @@
 <footer class="pb-50  pt-70 pos-relative">
         <div class="pos-top triangle-bottom"></div>
         <div class="container-fluid">
-                <a href="http://localhost/dashboard/restaurant/"><img src="<?php echo base_url('assets/images/tt.png'); ?>" alt="TREAT TOO"></a>
-                
+                <a href="http://localhost/dashboard/restaurant/"><!--<img src="assets/images/fff.jpg" height="125" width="25">Mran<br>Supermarket</a>-->
+                <a class="logo" href="<?php echo base_url() ?>"><img src="<?php echo base_url() ?>/assets/images/fff.jpg" height="125" width="25">Mran<br>Supermarket</a>
                 <div class="pt-15">
                         <p class="underline-secondary"><b>Address:</b></p>
-                        <p>your location </p>
+                        <p>Duplication Road,Colombo 03</p>
+                        <p>65 Colombo Main Road, Galle</p>
+                        <p>Negombo Road, Wattala</p>
+                        <p>William Gopallawa Mawatha, Kandy </p>
+
+                        
                 </div>
 
                 <div class="pt-15">
@@ -15,7 +20,7 @@
 
                 <div class="pt-315">
                         <p class="underline-secondary mb-10"><b>Email:</b></p>
-                        <a href="mailto:yourmail@gmail.com"> TREAT TOO_rest@gmail.com</a>
+                        <a href="mailto:yourmail@gmail.com"> mran_supermarket@gmail.com</a>
                 </div>
 
                 <ul class="icon mt-30">

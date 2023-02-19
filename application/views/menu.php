@@ -1,7 +1,8 @@
 <header>
         <div class="container">
 
-                <a class="logo" href="<?php echo base_url() ?>"><img src="<?php echo base_url('assets/images/tt.png'); ?>" alt="TREAT TOO"></a>
+                <a class="logo" href="<?php echo base_url() ?>"><img src="<?php echo base_url() ?>/assets/images/fff.jpg" height="50" width="50"alt="Mran Supermarket"></a>
+                
 
 
                 <div class="right-area">
@@ -12,9 +13,8 @@
 
                 <ul class="main-menu font-mountainsre" id="main-menu">
                         
-                        <li><a href="<?php echo base_url('index.php/user/foodMenu') ?>">PRODUCTS</a></li>
                         
-
+                        <li><a href="<?php echo base_url('index.php/user/foodMenu') ?>">PRODUCTS</a></li>
                         <li><a href="<?php echo base_url('/index.php/user/selectUser/') ?>">ONLINE ORDER</a></li>
                         <li><a href="<?php echo base_url('/index.php/user/myCart') ?>">MY CART</a></li>
                         <li><a href="<?php echo base_url('index.php/user/location') ?>">LOCATION</a></li>

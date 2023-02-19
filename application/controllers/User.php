@@ -827,7 +827,7 @@ echo '</div>';*/
 			'product_id' => $_POST['product_id'],
 			'category_id' => $_POST['product_category'],
 			'product_title' =>$_POST['product_name'],
-			'product_description' =>$_POST['product_descripion'],
+			// 'product_description' =>$_POST['product_descripion'],
 			'product_image' =>$imageExsit,
 			'availability' =>$_POST['availability'],
 			'currency' =>$_POST['currency'],

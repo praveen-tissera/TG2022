@@ -23,13 +23,12 @@
         <div class="col-12">
             <h2><center> About Us </center></h2><br>
             <p style = 'font-family:cambria; font-size:20px;'>
-        The "dream" began with the desire to bring pizza perfection from Italy to Srilanka to satisfy the increasingly discerning palates of Srilankan customers. In 1995 the dream turned into reality with the opening of the first TREAT TOO restaurant in Creekside Lane, Avila Beach, Trinco.
-
-Trinco had never experienced such pizza perfection before! The first TREAT TOO soon became a favourite due to its relaxed and sociable atmosphere as well as for its fabulous pizzas and desserts. The restaurant was frequently mentioned as a favourite meeting place of several modern Srilankan writers and artists.
-
-The demand for pizza perfection grew and TREAT TOO restaurants, each with their own distinctive personalities and styles, will be opened in Colombo City Center and at the lieberty food court very soon!.
-
-New TREAT TOO restaurants have been springing up for the last few years. These are set to become firm favourites with local workers and residents as well as tourists. We look ahead to expand our business in the other countries as well. Haven't you tried the deliciousness of our food. Head Fast to the avilla beach trinco and feel the differences of tasty.
+            MRAN SUPERMARKET is a growing goods delivering service situated in Sri Lanka. 
+            This market is selling goods for the local customers and has a growing base in the area.
+            The first Mran Supermarket was located in the busiest city Colombo which was soon to make all customers love the service and the products it sells with the help of the most trusted and high quality sellers.
+            The supermarket grew much and much where it spreaded out of Colombo.
+            MRAN supermarket has taken a big step of going in the parth of technolgy to access the needs of the local customers.
+            If you havent tried our friendly supermarket this is the sign to head fast and grab what you need.
 </p>
             
         </div>

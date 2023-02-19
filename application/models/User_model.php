@@ -540,7 +540,7 @@ class User_model extends CI_Model
         $this->db->where($condition);
         
         $query = $this->db->get();
-        //echo $this->db->last_query();
+        //  echo $this->db->last_query();
         $query->num_rows();
         if ($query->num_rows() > 0) {
             return $query->result();
@@ -624,7 +624,7 @@ class User_model extends CI_Model
     public function update_product($data){
         $this->db->set('category_id', $data['category_id']);
         $this->db->set('product_title', $data['product_title']);
-        $this->db->set('product_description', $data['product_description']);
+        // $this->db->set('product_description', $data['product_description']);
         $this->db->set('availability', $data['availability']);
         $this->db->set('currency', $data['currency']);
         $this->db->set('price', $data['price']);

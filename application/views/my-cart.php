@@ -76,7 +76,7 @@
                 echo "</tboday>";
         echo "</table>";
             }else{
-                echo "no menu found";
+                echo "No Product found";
             }
                 
                 

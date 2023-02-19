@@ -27,7 +27,7 @@
         <div >
                 <div class="heading"><br>
                         
-                        <h2>Products List</h2>
+                        <h2>Product List</h2>
                        
                 </div>
 
@@ -98,7 +98,7 @@
                         
                 </div><!-- row -->
 
-                <!-- <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="#" class="btn-primaryc plr-25"><b>SEE TODAYS MENU</b></a></h6> -->
+                <h6 class="center-text mt-40 mt-sm-20 mb-30"><a href="#" class="btn-primaryc plr-25"><b>SEE Products</b></a></h6> 
         </div><!-- container -->
 </section>
         </div>
