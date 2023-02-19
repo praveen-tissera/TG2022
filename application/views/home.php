@@ -50,9 +50,11 @@
 
                 <div class="row">
                         <div class="col-md-6">
-                                <p class="mb-30">Thousands of Sri Lankans are served daily by Mran, which has been owned and operated by Sri Lankans for the past 15 years.
+                                <p class="mb-30">Thousands of Sri Lankans are served daily by Mran, which has been owned 
+                                        and operated by Sri Lankans for the past 15 years.
                                          Mran provides the freshest products possible while still offering excellent value.
-                                        Around 335 products make up our ever-expanding own label product portfolio, and Mran also sells a wide range of products that are uniquely sourced and sold at our supermarkets to give discerning customers a variety of options. 
+                                        Around 335 products make up our ever-expanding own label product portfolio, and Mran also 
+                                        sells a wide range of products that are uniquely sourced and sold at our supermarkets to give discerning customers a variety of options. 
                                         Mran grocery store has introduced an online shopping platform that offers consumers the option of home delivery and click and collect,
                                          Mran also uses cutting-edge systems to ensure that operations run smoothly and that customers always have access to the products they need.
                                         Our team of over 4500 individuals, who have a passion for food, especially fresh food, is the key to our success as we work to give our customers a pleasant shopping experience and our stakeholders enduring partnerships.
@@ -88,7 +90,7 @@
         <div class="container">
                 <div class="heading">
                         <img class="heading-img" src="images/heading_logo.png" alt="">
-                        <h2>Best Sellers</h2>
+                        <h3>Best Sellers</h3>
                 </div>
 
                 <div class="row">
