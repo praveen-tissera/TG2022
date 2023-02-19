@@ -719,6 +719,28 @@ echo '</div>';*/
 	}
 
 	/**
+	 * show all Suppliers
+	 */
+	public function showAllISuppliers(){
+		
+		$item = $this->User_model->load_all_suppliers();
+
+		$data['all_item'] = $item;
+		$success = $this->session->flashdata('success_message_display');
+		$error = $this->session->flashdata('error_message_display');
+		if(!empty($success)){
+			$data['success_message_display'] = $success;
+			$this->load->view('all-suppliers',$data);
+		}else if(!empty($error)){
+			$data['error_message_display'] = $error;
+			$this->load->view('all-suppliers',$data);
+		}
+		else{
+			$this->load->view('all-suppliers',$data);
+		}
+	
+	}
+	/**
 	 * get single menu details
 	 */
 	public function showSingleProduct($productId){

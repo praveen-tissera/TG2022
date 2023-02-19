@@ -440,6 +440,25 @@ class User_model extends CI_Model
         }
     }
 
+     /**
+     * load all suppliers from db
+     */
+    public function load_all_suppliers(){
+        $this->db->select('*');
+        $this->db->from('tbl_suppliers');
+        
+        $this->db->order_by("supplier_name", "ASC");
+        $query = $this->db->get();
+        //echo $this->db->last_query();
+        $query->num_rows();
+        if ($query->num_rows() > 0) {
+            return $query->result();
+        } 
+        else {
+            return false;
+        }
+    }
+
 
     /**
      * load single product from db

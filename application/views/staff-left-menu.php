@@ -45,6 +45,8 @@
           <a class="collapse-item" href="<?php echo base_url('index.php/user/showAllProductsCategory') ?>">View Category</a>
           <a class="collapse-item" href="<?php echo base_url('index.php/user/showAllItem') ?>">View Item</a>
           <a class="collapse-item" href="<?php echo base_url('index.php/user/editStaff') ?>">Edit Staff</a>
+          <a class="collapse-item" href="<?php echo base_url('index.php/user/showAllISuppliers') ?>">View  Suppliers</a>
+          <a class="collapse-item" href="<?php echo base_url('index.php/user/editStaff') ?>">Edit Staff</a>
           <a class="collapse-item" href="<?php echo base_url('index.php/user/createPromotion') ?>">Create Promotion</a>
         </div>
       </div>
