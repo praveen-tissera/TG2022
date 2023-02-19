@@ -13,7 +13,7 @@ $user_details = $this->user_model->get_user($this->session->userdata('user_id'))
                     </ul>
 
                     <a href="<?php echo site_url(''); ?>" class="navbar-brand" href="#">
-                        <img src="<?php echo base_url().'uploads/system/logo-dark.png'; ?>" alt="" height="35">
+                        <img src="<?php echo base_url().'uploads/system/logo-dark.png'; ?>" alt="" height="70">
                     </a>
 
                     <?php include 'menu.php'; ?>

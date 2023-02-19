@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 29, 2023 at 09:05 AM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 7.3.28
+-- Host: localhost
+-- Generation Time: Feb 19, 2023 at 08:00 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `seekers_db`
+-- Database: `seekers2_db`
 --
 
 -- --------------------------------------------------------
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `category` (
-  `id` int(11) UNSIGNED NOT NULL,
+  `id` int(11) NOT NULL,
   `code` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `parent` int(11) DEFAULT 0,
@@ -46,7 +46,10 @@ CREATE TABLE `category` (
 INSERT INTO `category` (`id`, `code`, `name`, `parent`, `slug`, `date_added`, `last_modified`, `font_awesome_class`, `thumbnail`) VALUES
 (1, '6a80183248', 'HTML', 1, 'html', 1674946800, 1674946800, 'fas fa-chess', 'category-thumbnail.png'),
 (2, 'dae801b9d4', 'HTML', 0, 'html', 1674946800, 1674946800, 'fab fa-accessible-icon', 'category-thumbnail.png'),
-(3, '138bbabc2e', 'CSS', 2, 'css', 1674946800, NULL, NULL, NULL);
+(3, '138bbabc2e', 'CSS', 2, 'css', 1674946800, NULL, NULL, NULL),
+(5, '183ea31fe7', 'PHP', 0, 'php', 1676329200, NULL, 'fas fa-chess', 'category-thumbnail.png'),
+(6, '92e4d6cc17', 'Advanced PHP', 5, 'advanced-php', 1676329200, NULL, NULL, NULL),
+(7, 'a0b3d4b71f', 'Basic PHP', 5, 'basic-php', 1676329200, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -75,7 +78,43 @@ INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
 ('pgmpduc6g3i7col0bomqk1d4at1tov16', '::1', 1674966752, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637343936363735323b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b757365725f69647c733a313a2232223b726f6c655f69647c733a313a2232223b726f6c657c733a343a2255736572223b6e616d657c733a31353a225072617665656e2074697373657261223b757365725f6c6f67696e7c733a313a2231223b),
 ('7ufgolqul6b84h552hfh1koe1j2cf5b1', '::1', 1674967186, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637343936373138363b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b666c6173685f6d6573736167657c733a32313a22436f75727365205374617475732055706461746564223b5f5f63695f766172737c613a313a7b733a31333a22666c6173685f6d657373616765223b733a333a226f6c64223b7d),
 ('d7p1lpegv28gg953kdqcpeopgakcgvid', '::1', 1674967047, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637343936363932373b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2233223b726f6c655f69647c733a313a2232223b726f6c657c733a343a2255736572223b6e616d657c733a31323a226b6173756e206b756d617261223b757365725f6c6f67696e7c733a313a2231223b6c61796f75747c733a343a226c697374223b),
-('jevjern7v5o1flm2giqfe3hre2bnqm3p', '::1', 1674967197, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637343936373138363b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b);
+('jevjern7v5o1flm2giqfe3hre2bnqm3p', '::1', 1674967197, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637343936373138363b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('e7joadue81pv1985hssd9e9dq55b61j5', '::1', 1676255260, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363235353236303b636172745f6974656d737c613a303a7b7d),
+('j6sbia8qi50fgm5e6t5spp516of0mghm', '::1', 1676257896, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363235373839363b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b757365725f69647c733a313a2232223b726f6c655f69647c733a313a2232223b726f6c657c733a343a2255736572223b6e616d657c733a31353a225072617665656e2074697373657261223b757365725f6c6f67696e7c733a313a2231223b),
+('eo48fpshc9nj4q8h6d29pfug9ct3sd29', '::1', 1676258103, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363235373839363b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b757365725f69647c733a313a2232223b726f6c655f69647c733a313a2232223b726f6c657c733a343a2255736572223b6e616d657c733a31353a225072617665656e2074697373657261223b757365725f6c6f67696e7c733a313a2231223b),
+('kbtuvdvis8qea19g3rfon8mklnt4o6j8', '::1', 1676258096, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363235383036383b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b666c6173685f6d6573736167657c733a31333a224d6573736167652053656e7421223b5f5f63695f766172737c613a313a7b733a31333a22666c6173685f6d657373616765223b733a333a226f6c64223b7d),
+('esu8gqml4s05ft4j81gku0ih6iun26ik', '::1', 1676342444, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363334323434343b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('rg3fc7cfvducmqqgd5d5eln2h7at34kp', '::1', 1676345406, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363334353430363b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('jgbb0is7kq5c626i704cb7950vc0p5co', '::1', 1676345707, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363334353730373b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('l4ppge4bnaelkvbpaeohj5bsq7nalgoh', '::1', 1676346182, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363334363138323b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('bdotild8187ajss9j9gs1bsg7ul3af14', '::1', 1676347121, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363334373132313b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('qgde5b1vq5gjbev8m7o2gkm841le2sio', '::1', 1676348115, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363334383131353b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('8nemsb16r4dq29k0dneji5m8n5ru42sr', '::1', 1676349765, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363334393736353b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('q6p52a58dinicedi4tt1plspsv6tp4jr', '::1', 1676350081, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335303038313b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('mdg33qret2bm1g3peivchi10gqev03sd', '::1', 1676351078, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335313037383b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('pgq0t96l9aa2m2u62qhfd3ng9fblk9gp', '::1', 1676351384, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335313338343b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('2g9ikf424qq07bd6b0lbvvva6f5e3qbj', '::1', 1676351732, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335313733323b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('nmavd2svomskt3jeb9n41ed31s707hli', '::1', 1676351931, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335313933313b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2234223b726f6c655f69647c733a313a2232223b726f6c657c733a343a2255736572223b6e616d657c733a31363a22536164756e2047756e61726174686e65223b757365725f6c6f67696e7c733a313a2231223b),
+('0gsnil0ifanhhpe42lsmhmerhlc06n2k', '::1', 1676352607, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335323630373b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b),
+('2s3lkigavtb7ci3lqn3k5vu8pehjpkiu', '::1', 1676353094, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335333039343b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2234223b726f6c655f69647c733a313a2232223b726f6c657c733a343a2255736572223b6e616d657c733a31363a22536164756e2047756e61726174686e65223b757365725f6c6f67696e7c733a313a2231223b),
+('4rhqk2jh6pirgfaa0mpon8tev5qhmp05', '::1', 1676352919, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335323931393b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('ivmde3d922chp4qm0o73a0hb2o38inkn', '::1', 1676353251, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335333235313b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('b2o856ih4u2v5vttc3v5904412brh67v', '::1', 1676353481, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335333438313b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2234223b726f6c655f69647c733a313a2232223b726f6c657c733a343a2255736572223b6e616d657c733a31363a22536164756e2047756e61726174686e65223b757365725f6c6f67696e7c733a313a2231223b),
+('q3ajv73anc27piqnukl2j2ql48lk04vd', '::1', 1676353657, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335333635373b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b666c6173685f6d6573736167657c733a36353a22436f757273652055706461746564205375636365737366756c6c792e20506c65617365205761697420556e74696c6c2041646d696e20417070726f766573204974223b5f5f63695f766172737c613a313a7b733a31333a22666c6173685f6d657373616765223b733a333a226f6c64223b7d),
+('f37eb1lqqt5pjanq0k6ih02fo20d77ea', '::1', 1676353986, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335333938363b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2234223b726f6c655f69647c733a313a2232223b726f6c657c733a343a2255736572223b6e616d657c733a31363a22536164756e2047756e61726174686e65223b757365725f6c6f67696e7c733a313a2231223b),
+('h1qg3lq5ndme9fi31gp35s00uro49d2g', '::1', 1676354086, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335343038363b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('72en7h7983gi1224fodhsvnht7un274f', '::1', 1676354515, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335343531353b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2232223b726f6c655f69647c733a313a2232223b726f6c657c733a343a2255736572223b6e616d657c733a31353a225072617665656e2074697373657261223b757365725f6c6f67696e7c733a313a2231223b),
+('304q87t28suulm0i2h0svmj4nau8eqiq', '::1', 1676354439, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335343433393b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('q0vvplhll9vqr969acl5k9une1r23c0q', '::1', 1676354919, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335343931393b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('hmpoqdqsu8mmqpa4nkqp713mpra5oh5a', '::1', 1676354837, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335343833373b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2232223b726f6c655f69647c733a313a2232223b726f6c657c733a343a2255736572223b6e616d657c733a31353a225072617665656e2074697373657261223b757365725f6c6f67696e7c733a313a2231223b),
+('vjp3j1p7q46k14ulchulf3k6jkn2gk00', '::1', 1676355140, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335353134303b636172745f6974656d737c613a303a7b7d757365725f69647c733a313a2232223b726f6c655f69647c733a313a2232223b726f6c657c733a343a2255736572223b6e616d657c733a31353a225072617665656e2074697373657261223b757365725f6c6f67696e7c733a313a2231223b),
+('hgbho2bs73fek3642audal70tib8o4mm', '::1', 1676355256, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335353235363b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b666c6173685f6d6573736167657c733a34303a2253747564656e7420486173204265656e20456e726f6c6c656420546f205468617420436f75727365223b5f5f63695f766172737c613a313a7b733a31333a22666c6173685f6d657373616765223b733a333a226f6c64223b7d),
+('fbs0k5ci7qlqr4cfjagsicd5n7bf65gp', '::1', 1676355500, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335353530303b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b757365725f69647c733a313a2232223b726f6c655f69647c733a313a2232223b726f6c657c733a343a2255736572223b6e616d657c733a31353a225072617665656e2074697373657261223b757365725f6c6f67696e7c733a313a2231223b),
+('fcbjju7etstoqmdivbd7mbs7hhum3mdg', '::1', 1676355780, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335353738303b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('ruu92tmovpslt51g8co14ogt6v1t1bab', '::1', 1676358351, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335383335313b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b757365725f69647c733a313a2232223b726f6c655f69647c733a313a2232223b726f6c657c733a343a2255736572223b6e616d657c733a31353a225072617665656e2074697373657261223b757365725f6c6f67696e7c733a313a2231223b),
+('vl02gcphgru73uqsjgtkmnl686qqoj1s', '::1', 1676358320, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335383332303b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('6rmv1k76vl1gelj7ddo1eorc3va05onl', '::1', 1676358401, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335383332303b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b757365725f69647c733a313a2231223b726f6c655f69647c733a313a2231223b726f6c657c733a353a2241646d696e223b6e616d657c733a31313a2261646d696e2061646d696e223b61646d696e5f6c6f67696e7c733a313a2231223b),
+('3pfs74jir26nln9u3ca4701h8k61om9i', '::1', 1676358395, 0x5f5f63695f6c6173745f726567656e65726174657c693a313637363335383335313b636172745f6974656d737c613a303a7b7d6c61796f75747c733a343a226c697374223b757365725f69647c733a313a2232223b726f6c655f69647c733a313a2232223b726f6c657c733a343a2255736572223b6e616d657c733a31353a225072617665656e2074697373657261223b757365725f6c6f67696e7c733a313a2231223b666c6173685f6d6573736167657c733a31333a224d6573736167652053656e7421223b5f5f63695f766172737c613a313a7b733a31333a22666c6173685f6d657373616765223b733a333a226f6c64223b7d);
 
 -- --------------------------------------------------------
 
@@ -84,7 +123,7 @@ INSERT INTO `ci_sessions` (`id`, `ip_address`, `timestamp`, `data`) VALUES
 --
 
 CREATE TABLE `comment` (
-  `id` int(11) UNSIGNED NOT NULL,
+  `id` int(11) NOT NULL,
   `body` longtext COLLATE utf8_unicode_ci DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   `commentable_id` int(11) DEFAULT NULL,
@@ -100,7 +139,7 @@ CREATE TABLE `comment` (
 --
 
 CREATE TABLE `course` (
-  `id` int(11) UNSIGNED NOT NULL,
+  `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `short_description` longtext COLLATE utf8_unicode_ci DEFAULT NULL,
   `description` longtext COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -134,8 +173,9 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`id`, `title`, `short_description`, `description`, `outcomes`, `language`, `category_id`, `sub_category_id`, `section`, `requirements`, `price`, `discount_flag`, `discounted_price`, `level`, `user_id`, `thumbnail`, `video_url`, `date_added`, `last_modified`, `visibility`, `is_top_course`, `is_admin`, `status`, `course_overview_provider`, `meta_keywords`, `meta_description`, `is_free_course`) VALUES
-(1, 'CSS Course for Beginners', 'CSS Course for Beginners', '<p>CSS Course for Beginners<br></p>', '[\"knowledge in styling\"]', 'english', 2, 3, '[]', '[\"basic html\"]', 455, NULL, 400, 'beginner', 1, NULL, 'https://www.youtube.com/watch?v=8ddrri-E2J8&amp;list=PLIZfeixKhxkdvn6PjstJzOfPgRS4pdzCk', 1674946800, NULL, NULL, NULL, 1, 'active', 'youtube', '', '', NULL),
-(2, 'css basics', 'css basics', '<p>css basics<br></p>', '[\"css knowledte\",\"htmls\"]', 'english', NULL, 3, '[1]', '[\"basic html\",\"basic ict\"]', 0, NULL, 0, 'advanced', 2, NULL, 'https://www.youtube.com/watch?v=8ddrri-E2J8&list=PLIZfeixKhxkdvn6PjstJzOfPgRS4pdzCk', 1674946800, 1674946800, NULL, 0, 0, 'active', 'youtube', '', 'html', 1);
+(1, 'CSS Course for Beginners', 'CSS Course for Beginners', '<p>CSS Course for Beginners<br></p>', '[\"knowledge in styling\"]', 'english', NULL, 3, '[2]', '[\"basic html\"]', 455, NULL, 400, 'beginner', 1, NULL, 'https://www.youtube.com/watch?v=8ddrri-E2J8&list=PLIZfeixKhxkdvn6PjstJzOfPgRS4pdzCk', 1674946800, 1676329200, NULL, 0, 1, 'active', 'youtube', '', '', NULL),
+(2, 'css basics', 'css basics', '<p>css basics<br></p>', '[\"css knowledte\",\"htmls\"]', 'english', NULL, 3, '[1]', '[\"basic html\",\"basic ict\"]', 0, NULL, 0, 'advanced', 2, NULL, 'https://www.youtube.com/watch?v=8ddrri-E2J8&list=PLIZfeixKhxkdvn6PjstJzOfPgRS4pdzCk', 1674946800, 1674946800, NULL, 0, 0, 'active', 'youtube', '', 'html', 1),
+(3, 'Learn PHP for beginner ', 'Learn PHP from beginning', '<p>Learn PHP from beginning<br></p>', '[\"use of php to develop backend\"]', 'english', 5, 7, '[3]', '[\"Basic html, css knowledge\"]', 1000, NULL, 0, 'beginner', 2, NULL, 'https://www.youtube.com/watch?v=samHP3pmwro', 1676329200, NULL, NULL, NULL, 0, 'active', 'youtube', '', 'php', NULL);
 
 -- --------------------------------------------------------
 
@@ -289,7 +329,9 @@ CREATE TABLE `enrol` (
 --
 
 INSERT INTO `enrol` (`id`, `user_id`, `course_id`, `date_added`, `last_modified`) VALUES
-(1, 3, 2, 1674946800, NULL);
+(1, 3, 2, 1674946800, NULL),
+(2, 4, 1, 1676329200, NULL),
+(3, 4, 3, 1676329200, NULL);
 
 -- --------------------------------------------------------
 
@@ -298,7 +340,7 @@ INSERT INTO `enrol` (`id`, `user_id`, `course_id`, `date_added`, `last_modified`
 --
 
 CREATE TABLE `frontend_settings` (
-  `id` int(11) UNSIGNED NOT NULL,
+  `id` int(11) NOT NULL,
   `key` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `value` longtext COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -318,10 +360,10 @@ INSERT INTO `frontend_settings` (`id`, `key`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `language`
+-- Table structure for table `languagee`
 --
 
-CREATE TABLE `language` (
+CREATE TABLE `languagee` (
   `phrase_id` int(11) NOT NULL,
   `phrase` longtext COLLATE utf8_unicode_ci DEFAULT NULL,
   `english` longtext COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -329,10 +371,10 @@ CREATE TABLE `language` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `language`
+-- Dumping data for table `languagee`
 --
 
-INSERT INTO `language` (`phrase_id`, `phrase`, `english`, `Bengali`) VALUES
+INSERT INTO `languagee` (`phrase_id`, `phrase`, `english`, `Bengali`) VALUES
 (1, 'manage_profile', NULL, NULL),
 (140, 'category_code', NULL, NULL),
 (3, 'dashboard', NULL, NULL),
@@ -933,7 +975,7 @@ INSERT INTO `language` (`phrase_id`, `phrase`, `english`, `Bengali`) VALUES
 --
 
 CREATE TABLE `lesson` (
-  `id` int(11) UNSIGNED NOT NULL,
+  `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `duration` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `course_id` int(11) DEFAULT NULL,
@@ -954,7 +996,10 @@ CREATE TABLE `lesson` (
 --
 
 INSERT INTO `lesson` (`id`, `title`, `duration`, `course_id`, `section_id`, `video_type`, `video_url`, `date_added`, `last_modified`, `lesson_type`, `attachment`, `attachment_type`, `summary`, `order`) VALUES
-(1, 'css', NULL, 2, 1, NULL, NULL, 1674946800, NULL, 'other', 'a2aeff776732dedaf383061e38f25116.pdf', 'doc', 'css', 0);
+(1, 'css', NULL, 2, 1, NULL, NULL, 1674946800, NULL, 'other', 'a2aeff776732dedaf383061e38f25116.pdf', 'doc', 'css', 0),
+(2, 'CSS Selectors', '00:00:00', 2, 1, NULL, NULL, 1676329200, NULL, 'quiz', NULL, NULL, 'Select correct answer', 0),
+(3, 'ID Selector', NULL, 1, 2, NULL, NULL, 1676329200, NULL, 'other', '99bd57d3cc844a8114094e1a5bef36fa.docx', 'doc', '', 0),
+(4, 'php datatypes', NULL, 3, 3, NULL, NULL, 1676329200, NULL, 'other', '2d3b1bef31786b86ad27e347b47cb25e.mp4', 'doc', 'php datatypes', 0);
 
 -- --------------------------------------------------------
 
@@ -964,12 +1009,23 @@ INSERT INTO `lesson` (`id`, `title`, `duration`, `course_id`, `section_id`, `vid
 
 CREATE TABLE `message` (
   `message_id` int(11) NOT NULL,
-  `message_thread_code` longtext DEFAULT NULL,
+  `message_thread_code` longtext CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `message` longtext DEFAULT NULL,
-  `sender` longtext DEFAULT NULL,
+  `sender` int(11) DEFAULT NULL,
   `timestamp` longtext DEFAULT NULL,
   `read_status` int(11) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `message`
+--
+
+INSERT INTO `message` (`message_id`, `message_thread_code`, `message`, `sender`, `timestamp`, `read_status`) VALUES
+(1, '78fcc9589770f0f', 'test ', 2, '1676257915', 1),
+(2, '78fcc9589770f0f', 'test2', 2, '1676258029', 1),
+(3, '78fcc9589770f0f', 'hello', 1, '1676258096', NULL),
+(4, '78fcc9589770f0f', 'hello how are you', 1, '1676358332', NULL),
+(5, '78fcc9589770f0f', 'Im fine thank  you', 2, '1676358394', 1);
 
 -- --------------------------------------------------------
 
@@ -980,10 +1036,17 @@ CREATE TABLE `message` (
 CREATE TABLE `message_thread` (
   `message_thread_id` int(11) NOT NULL,
   `message_thread_code` longtext COLLATE utf8_unicode_ci DEFAULT NULL,
-  `sender` varchar(255) COLLATE utf8_unicode_ci DEFAULT '',
-  `receiver` varchar(255) COLLATE utf8_unicode_ci DEFAULT '',
+  `sender` int(11) DEFAULT NULL,
+  `receiver` int(11) DEFAULT NULL,
   `last_message_timestamp` longtext COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `message_thread`
+--
+
+INSERT INTO `message_thread` (`message_thread_id`, `message_thread_code`, `sender`, `receiver`, `last_message_timestamp`) VALUES
+(1, '78fcc9589770f0f', 2, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -1004,6 +1067,14 @@ CREATE TABLE `payment` (
   `instructor_payment_status` int(11) DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `payment`
+--
+
+INSERT INTO `payment` (`id`, `user_id`, `payment_type`, `course_id`, `amount`, `date_added`, `last_modified`, `admin_revenue`, `instructor_revenue`, `instructor_payment_status`) VALUES
+(1, 4, 'online', 1, 350, 1676352909, NULL, '400', '20', 1),
+(2, 4, NULL, 3, 1000, 1676329200, NULL, '10', '990', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -1011,7 +1082,7 @@ CREATE TABLE `payment` (
 --
 
 CREATE TABLE `question` (
-  `id` int(11) UNSIGNED NOT NULL,
+  `id` int(11) NOT NULL,
   `quiz_id` int(11) DEFAULT NULL,
   `title` longtext COLLATE utf8_unicode_ci DEFAULT NULL,
   `type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -1020,6 +1091,14 @@ CREATE TABLE `question` (
   `correct_answers` longtext COLLATE utf8_unicode_ci DEFAULT NULL,
   `order` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `question`
+--
+
+INSERT INTO `question` (`id`, `quiz_id`, `title`, `type`, `number_of_options`, `options`, `correct_answers`, `order`) VALUES
+(1, 2, 'Select correct order of CSS selectors.', 'multiple_choice', 3, '[\"ID, TAG, CLASS\",\"ID, CLASS, TAG\",\"CLASS, ID, TAG\"]', '[\"2\"]', 1),
+(2, 2, 'How Many methods to add CSS code to html', 'multiple_choice', 3, '[\"1\",\"2\",\"3\"]', '[\"3\"]', 2);
 
 -- --------------------------------------------------------
 
@@ -1038,6 +1117,14 @@ CREATE TABLE `rating` (
   `review` longtext COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `rating`
+--
+
+INSERT INTO `rating` (`id`, `rating`, `user_id`, `ratable_id`, `ratable_type`, `date_added`, `last_modified`, `review`) VALUES
+(1, 4, 4, 0, 'course', 1676329200, NULL, ''),
+(2, 4, 4, 1, 'course', 1676329200, NULL, 'good course');
+
 -- --------------------------------------------------------
 
 --
@@ -1045,7 +1132,7 @@ CREATE TABLE `rating` (
 --
 
 CREATE TABLE `role` (
-  `id` int(11) UNSIGNED NOT NULL,
+  `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `date_added` int(11) DEFAULT NULL,
   `last_modified` int(11) DEFAULT NULL
@@ -1077,7 +1164,9 @@ CREATE TABLE `section` (
 --
 
 INSERT INTO `section` (`id`, `title`, `course_id`, `order`) VALUES
-(1, 'css', 2, 0);
+(1, 'Cascading Style Sheet', 2, 0),
+(2, 'Basic css selectors', 1, 0),
+(3, 'PHP first Step', 3, 0);
 
 -- --------------------------------------------------------
 
@@ -1110,8 +1199,8 @@ INSERT INTO `settings` (`id`, `key`, `value`) VALUES
 (12, 'slogan', 'A course based video CMS'),
 (13, 'text_align', NULL),
 (14, 'allow_instructor', '1'),
-(15, 'instructor_revenue', '64'),
-(16, 'system_currency', 'USD'),
+(15, 'instructor_revenue', '70'),
+(16, 'system_currency', 'LKR'),
 (17, 'paypal_currency', 'USD'),
 (18, 'stripe_currency', 'USD'),
 (19, 'author', 'Learning Management System Online'),
@@ -1131,26 +1220,11 @@ INSERT INTO `settings` (`id`, `key`, `value`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tag`
---
-
-CREATE TABLE `tag` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `tag` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `tagable_id` int(11) DEFAULT NULL,
-  `tagable_type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `date_added` int(11) DEFAULT NULL,
-  `last_modified` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
-  `id` int(11) UNSIGNED NOT NULL,
+  `id` int(11) NOT NULL,
   `first_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `last_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -1176,7 +1250,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `social_links`, `biography`, `role_id`, `date_added`, `last_modified`, `watch_history`, `wishlist`, `title`, `paypal_keys`, `stripe_keys`, `verification_code`, `status`) VALUES
 (1, 'admin', 'admin', 'admin@example.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '{\"facebook\":\"\",\"twitter\":\"\",\"linkedin\":\"\"}', NULL, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
 (2, 'Praveen', 'tissera', 'praveen.tissera@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '{\"facebook\":\"\",\"twitter\":\"\",\"linkedin\":\"\"}', NULL, 2, 1674964791, NULL, '[]', '[]', NULL, '[{\"production_client_id\":\"\"}]', '[{\"public_live_key\":\"\",\"secret_live_key\":\"\"}]', 'b5f74259c0aad4edda90e076e9d8b5f5', 1),
-(3, 'kasun', 'kumara', 'kasun@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '{\"facebook\":\"\",\"twitter\":\"\",\"linkedin\":\"\"}', NULL, 2, 1674967001, NULL, '[]', '[]', NULL, '[{\"production_client_id\":\"\"}]', '[{\"public_live_key\":\"\",\"secret_live_key\":\"\"}]', '53430558e22fae88eb26200fe3a88c22', 1);
+(3, 'kasun', 'kumara', 'kasun@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '{\"facebook\":\"\",\"twitter\":\"\",\"linkedin\":\"\"}', NULL, 2, 1674967001, NULL, '[]', '[]', NULL, '[{\"production_client_id\":\"\"}]', '[{\"public_live_key\":\"\",\"secret_live_key\":\"\"}]', '53430558e22fae88eb26200fe3a88c22', 1),
+(4, 'Sadun', 'Gunarathne', 'sadun@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', '{\"facebook\":\"\",\"twitter\":\"\",\"linkedin\":\"\"}', '', 2, 1676351503, NULL, '[]', '[]', NULL, '[{\"production_client_id\":\"\"}]', '[{\"public_live_key\":\"\",\"secret_live_key\":\"\"}]', NULL, 1);
 
 --
 -- Indexes for dumped tables
@@ -1192,13 +1267,16 @@ ALTER TABLE `category`
 -- Indexes for table `comment`
 --
 ALTER TABLE `comment`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `course`
 --
 ALTER TABLE `course`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `category_id` (`category_id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `currency`
@@ -1210,7 +1288,9 @@ ALTER TABLE `currency`
 -- Indexes for table `enrol`
 --
 ALTER TABLE `enrol`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `course_id` (`course_id`);
 
 --
 -- Indexes for table `frontend_settings`
@@ -1219,46 +1299,57 @@ ALTER TABLE `frontend_settings`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `language`
+-- Indexes for table `languagee`
 --
-ALTER TABLE `language`
+ALTER TABLE `languagee`
   ADD PRIMARY KEY (`phrase_id`);
 
 --
 -- Indexes for table `lesson`
 --
 ALTER TABLE `lesson`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `course_id` (`course_id`),
+  ADD KEY `section_id` (`section_id`);
 
 --
 -- Indexes for table `message`
 --
 ALTER TABLE `message`
-  ADD PRIMARY KEY (`message_id`);
+  ADD PRIMARY KEY (`message_id`),
+  ADD KEY `message_thread_code` (`message_thread_code`(1000)),
+  ADD KEY `sender` (`sender`);
 
 --
 -- Indexes for table `message_thread`
 --
 ALTER TABLE `message_thread`
-  ADD PRIMARY KEY (`message_thread_id`);
+  ADD PRIMARY KEY (`message_thread_id`),
+  ADD KEY `message_thread_code` (`message_thread_code`(1024)),
+  ADD KEY `receiver` (`receiver`),
+  ADD KEY `sender` (`sender`);
 
 --
 -- Indexes for table `payment`
 --
 ALTER TABLE `payment`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `payment_ibfk_2` (`course_id`);
 
 --
 -- Indexes for table `question`
 --
 ALTER TABLE `question`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `quiz_id` (`quiz_id`);
 
 --
 -- Indexes for table `rating`
 --
 ALTER TABLE `rating`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `role`
@@ -1270,7 +1361,8 @@ ALTER TABLE `role`
 -- Indexes for table `section`
 --
 ALTER TABLE `section`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `course_id` (`course_id`);
 
 --
 -- Indexes for table `settings`
@@ -1279,16 +1371,11 @@ ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tag`
---
-ALTER TABLE `tag`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `role_id` (`role_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1298,19 +1385,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `currency`
@@ -1322,67 +1409,67 @@ ALTER TABLE `currency`
 -- AUTO_INCREMENT for table `enrol`
 --
 ALTER TABLE `enrol`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `frontend_settings`
 --
 ALTER TABLE `frontend_settings`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `language`
+-- AUTO_INCREMENT for table `languagee`
 --
-ALTER TABLE `language`
+ALTER TABLE `languagee`
   MODIFY `phrase_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=594;
 
 --
 -- AUTO_INCREMENT for table `lesson`
 --
 ALTER TABLE `lesson`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
-  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `message_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `message_thread`
 --
 ALTER TABLE `message_thread`
-  MODIFY `message_thread_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `message_thread_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `question`
 --
 ALTER TABLE `question`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `rating`
 --
 ALTER TABLE `rating`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `role`
 --
 ALTER TABLE `role`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `section`
 --
 ALTER TABLE `section`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `settings`
@@ -1391,16 +1478,85 @@ ALTER TABLE `settings`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT for table `tag`
---
-ALTER TABLE `tag`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `comment`
+--
+ALTER TABLE `comment`
+  ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `course`
+--
+ALTER TABLE `course`
+  ADD CONSTRAINT `course_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`),
+  ADD CONSTRAINT `course_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `enrol`
+--
+ALTER TABLE `enrol`
+  ADD CONSTRAINT `enrol_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `enrol_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`);
+
+--
+-- Constraints for table `lesson`
+--
+ALTER TABLE `lesson`
+  ADD CONSTRAINT `lesson_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`),
+  ADD CONSTRAINT `lesson_ibfk_2` FOREIGN KEY (`section_id`) REFERENCES `section` (`id`);
+
+--
+-- Constraints for table `message`
+--
+ALTER TABLE `message`
+  ADD CONSTRAINT `message_ibfk_1` FOREIGN KEY (`sender`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `message_thread`
+--
+ALTER TABLE `message_thread`
+  ADD CONSTRAINT `message_thread_ibfk_1` FOREIGN KEY (`receiver`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `message_thread_ibfk_2` FOREIGN KEY (`sender`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `payment`
+--
+ALTER TABLE `payment`
+  ADD CONSTRAINT `payment_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `payment_ibfk_2` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`);
+
+--
+-- Constraints for table `question`
+--
+ALTER TABLE `question`
+  ADD CONSTRAINT `question_ibfk_1` FOREIGN KEY (`quiz_id`) REFERENCES `lesson` (`id`);
+
+--
+-- Constraints for table `rating`
+--
+ALTER TABLE `rating`
+  ADD CONSTRAINT `rating_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `section`
+--
+ALTER TABLE `section`
+  ADD CONSTRAINT `section_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`);
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
