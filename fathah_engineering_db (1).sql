@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 18, 2023 at 09:05 AM
+-- Generation Time: Feb 19, 2023 at 08:59 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 7.3.28
 
@@ -81,7 +81,8 @@ INSERT INTO `address` (`addressID`, `country`, `city`, `postcode`, `streetName`,
 (17, 'Sri Lanka', 'Pannipitya Road, Tha', '10622', '615 A  1/1', 0),
 (18, 'Sri Lanka', 'Colombo', '10622', '615 A  1/1', 19),
 (19, 'Sri Lanka', 'Pannipitya Road, Tha', '10622', 'colombo', 19),
-(20, 'Sri Lanka', 'Pannipitya Road, Tha', '10622', 'Sri Lanka', 11);
+(20, 'Sri Lanka', 'Pannipitya Road, Tha', '10622', 'Sri Lanka', 11),
+(21, 'Sri Lanka', 'Pannipitya Road, Tha', '10622', '615 A  1/1', 11);
 
 -- --------------------------------------------------------
 
@@ -191,7 +192,8 @@ INSERT INTO `project` (`projectID`, `title`, `startDate`, `endDate`, `skillsRequ
 (6, 'Araliya Housing Scheme', '2023-01-04', '1970-01-01', 0, '250000', 'Housing Scheme', b'0', 1, '15'),
 (7, 'hello house', '1970-01-01', '1970-01-01', 0, '250000', 'Housing Scheme', b'0', 1, '17'),
 (8, 'Machine Operator', '2023-01-01', '2023-01-01', 0, '130', 'IT', b'1', 8, '19'),
-(9, 'operator 2', '1970-01-01', '1970-01-01', 0, '344', 'IT', b'0', 8, '20');
+(9, 'operator 2', '1970-01-01', '1970-01-01', 0, '344', 'IT', b'0', 8, '20'),
+(10, 'Building project at Gall', '1970-01-01', '1970-01-01', 0, '1111111', 'building construction', b'0', 1, '21');
 
 -- --------------------------------------------------------
 
@@ -447,7 +449,8 @@ INSERT INTO `user_skills` (`accountID`, `skillID`, `skillLevel`, `experienceYear
 (7, 1, '1 ', '3 ', '', 4),
 (7, 1, '1 ', '3 ', '', 5),
 (7, 4, '2 ', '5 ', '', 6),
-(8, 4, '1 ', '4 ', '', 7);
+(8, 4, '1 ', '4 ', '', 7),
+(1, 4, '2 ', '4 ', '', 8);
 
 --
 -- Indexes for dumped tables
@@ -582,7 +585,7 @@ ALTER TABLE `account_type`
 -- AUTO_INCREMENT for table `address`
 --
 ALTER TABLE `address`
-  MODIFY `addressID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `addressID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `employee_assignment`
@@ -612,7 +615,7 @@ ALTER TABLE `person`
 -- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
-  MODIFY `projectID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `projectID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `project_assignment`
@@ -666,7 +669,7 @@ ALTER TABLE `user_account`
 -- AUTO_INCREMENT for table `user_skills`
 --
 ALTER TABLE `user_skills`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
