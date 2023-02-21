@@ -54,14 +54,14 @@ ul.li.available{
 </style>
 </head> 
 <body onload="if(<?php if (isset($this->session->logged_in) ) { echo $this->session->logged_in; } else  {echo 'false';} ?>){DisplaySessionTimeout();}">
-	<div class="jumbotron text-center" style="background-image: url(../img/logo.jpg)";>
-		<img src="../img/logo.png" alt="Logo" style="width:150px;height:100px;">
+	<div class="jumbotron text-center" style="background-image: url(../img/bla.png)";>
+		<img src="../img/header.png" alt="Logo" style="width:1600px;height:400px;">
 	</div>
 	</div>
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#">PlanWise</a>
+				<a class="navbar-brand" href="#">Al - Fathah Engineering</a>
 			</div>
 			<ul class="nav navbar-nav navbar-right">
 				<li class="active"><a href="view_profile">Home</a></li>

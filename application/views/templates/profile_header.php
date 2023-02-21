@@ -23,7 +23,7 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	
 
-	<title>PlanWiseRMS</title>
+	<title>Al-FathahEngineering RMS</title>
 	<!-- <script type="text/javascript">
 		var sessionTimeout = <?php echo $this->config->item("sess_expiration"); ?> ; 
 			
@@ -58,7 +58,7 @@
   <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="<?php echo site_url();?>/view_profile"><img src="<?php echo base_url() ?>img/Picture1.png" alt="Logo" style="width:60px;height:50px; padding-bottom: 10px; "></a>
+      <a class="navbar-brand" href="<?php echo site_url();?>/view_profile"><img src="<?php echo base_url() ?>img/logopic.png" alt="Logo" style="width:80px;height:80px; padding-bottom: 50px; "></a>
 
     </div>
     <ul class="nav navbar-nav navbar-right">

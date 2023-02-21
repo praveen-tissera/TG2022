@@ -10,9 +10,9 @@
 	 <div class="container">
     <div id="shadow">
       <div class="jumbotron" style="">
-        <div id="subTitle" <h3>Al-Fathah Enginneering</h3>
+        <div id="subTitle" <h3 style="color:black;"><b>Al-Fathah Enginneering</b></h3>
         </div>
-        <h5>Sign into your Al-Fathah Engineering account</h5>
+        <h4 style="color:black;"><center><i>Sign into your Al - Fathah Engineering account</i></center></h4><br>
 		<?php echo form_open('login'); ?>
           <div class="form-group">
             <label for="username">Username:</label>

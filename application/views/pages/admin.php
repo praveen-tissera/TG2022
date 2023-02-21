@@ -7,7 +7,7 @@ if(isset($_POST['submit'])){
     $subject = "Form submission";
     $subject2 = "Copy of your form submission";
     $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
-    $message2 = "Hello " . $first_name . ",\n\n" . "This is your registration link to the PlanWiseRMS: www2.macs.hw.ac.uk/~mvv1/GP/index.php/create";
+    $message2 = "Hello " . $first_name . ",\n\n" . "This is your registration link to the Al-Fathah Engineering RMS: www2.macs.hw.ac.uk/~mvv1/GP/index.php/create";
 
     $headers = "From:" . $from;
     $headers2 = "From:" . $to;
