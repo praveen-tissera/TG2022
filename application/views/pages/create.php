@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
     $from = $_POST['emailAddress']; // this is the sender's Email address
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $subject = "Complite registration";
+    $subject = "Complete registration";
     $subject2 = "Copy of registration details";
     $message = "Username:" . $username . "\nPassoword: " . $password;
     $message2 = "Hello " . $username . ",\n\n" . "This email confirm your successful registration in PlanWiseRMS.\n" . "Your registration details are listed below:\n" . "Username:" . $username . "\n\n" . "Password:" . $password . "\n\n\n" . "I hope you enjoy using PlanWiseRMS!";
