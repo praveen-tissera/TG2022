@@ -61,7 +61,7 @@ if(isset($_POST['submit'])){
 	  <div class="col-md-5">
 	
 	  <select class="form-control input-md" name="type">
-		<option value="1">Client</option>
+		<option value="1">Admin</option>
 		<option value="2">Staff</option>
 		<option value="3">Client</option>
 	  </select>
