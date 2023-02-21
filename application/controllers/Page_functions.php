@@ -134,6 +134,7 @@ public function view_profile(){
 			
 					if ($this->form_validation->run() === FALSE)
 		{ 	
+			
 			$this->load->view('templates/profile_header', $data);
 			$this->load->view('pages/show_profile');
 			$this->load->view('templates/footer');

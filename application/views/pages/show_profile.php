@@ -18,7 +18,7 @@
 <ul>
 	<?php if(isset($history) && isset($time_off)) { /*print_r($history);*/ $true = true;?>
 <?php $currentDate = date('y-m-d'); $latest = date(0000-00-00); foreach($history as $h){ if(($h['task_end']) > $latest ) {  $latest = $h['task_end'];}  else { continue;}	}?>
-	<?php if((($latest) > $currentDate) || $time_off[0]['endDate'] > $currentDate ) {?>
+	<?php if((($latest) > $currentDate) || (isset($time_off[0]) && $time_off[0]['endDate'] > $currentDate )) {?>
 	<li class = "unavailable"> <p style = "color: red">unavailable</p></li>
 	<?php } else { ?>	
 	<li class = "available"> <p style = "color: #00FF66">available</p> </li>
