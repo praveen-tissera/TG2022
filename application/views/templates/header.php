@@ -54,7 +54,7 @@ ul.li.available{
 </style>
 </head> 
 <body onload="if(<?php if (isset($this->session->logged_in) ) { echo $this->session->logged_in; } else  {echo 'false';} ?>){DisplaySessionTimeout();}">
-	<div class="jumbotron text-center" style="background-image: url(../img/white-wood.jpg)";>
+	<div class="jumbotron text-center" style="background-image: url(../img/logo.jpg)";>
 		<img src="../img/logo.png" alt="Logo" style="width:150px;height:100px;">
 	</div>
 	</div>

@@ -10,9 +10,9 @@
 	 <div class="container">
     <div id="shadow">
       <div class="jumbotron" style="">
-        <div id="subTitle" <h3>PlanWise ID </h3>
+        <div id="subTitle" <h3>Al-Fathah Enginneering</h3>
         </div>
-        <h5>Sign into your PlanWise account</h5>
+        <h5>Sign into your Al-Fathah Engineering account</h5>
 		<?php echo form_open('login'); ?>
           <div class="form-group">
             <label for="username">Username:</label>

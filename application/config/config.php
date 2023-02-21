@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //$config['base_url'] = 'http://www2.macs.hw.ac.uk/~gg3/';
 
 
-$config['base_url'] = 'http://localhost/TG2022/';
+$config['base_url'] = 'http://localhost/ProjectMgmt/';
 
 /*
 |--------------------------------------------------------------------------
