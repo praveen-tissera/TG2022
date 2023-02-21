@@ -14,7 +14,7 @@
                                     echo '<a class="btn btn-danger" id="appointment" href="'. base_url('/#courseview') .'">Register to a course</a>';
                                 }
                             ?>
-                            
+                            <a href="" class="btn btn-info"><img width="20px" src="<?php echo base_url().'assets/img/fb.png' ?>" ></a>
                         </div>
 
                     </div>
