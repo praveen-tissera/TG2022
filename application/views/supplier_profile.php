@@ -40,7 +40,7 @@
               <h2>Suppliers</h2>
               <?php echo form_open('user/editStaff'); ?>
               <div class="form-group">
-              <label for="productprice">Select staff memeber to edit profile</label>
+              <label for="productprice">Select a supplier to edit profile</label>
               <select name="staff_id" class="form-control" required>
                 <?php 
                 
