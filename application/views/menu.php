@@ -14,7 +14,7 @@
                 <ul class="main-menu font-mountainsre" id="main-menu">
                         
                         
-                        <li><a href="<?php echo base_url('index.php/user/foodMenu') ?>">PRODUCTS</a></li>
+                        <li><a href="<?php echo base_url('index.php/user/productList') ?>">PRODUCTS</a></li>
                         <li><a href="<?php echo base_url('/index.php/user/selectUser/') ?>">ONLINE ORDER</a></li>
                         <li><a href="<?php echo base_url('/index.php/user/myCart') ?>">MY CART</a></li>
                         <li><a href="<?php echo base_url('index.php/user/location') ?>">LOCATION</a></li>

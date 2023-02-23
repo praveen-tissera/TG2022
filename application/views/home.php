@@ -32,7 +32,7 @@
 ?>
 
                                 <h1 class="mt-30 mb-15">Mran Supermarket</h1>
-                                <h5><a href="<?php echo base_url('index.php/user/foodMenu') ?>" class="btn-primaryc plr-25"><b>SEE PRODUCTS</b></a></h5>
+                                <h5><a href="<?php echo base_url('index.php/user/productList') ?>" class="btn-primaryc plr-25"><b>SEE PRODUCTS</b></a></h5>
                         </div><!-- dplay-tbl-cell -->
                 </div><!-- dplay-tbl -->
         </div><!-- container -->

@@ -21,7 +21,7 @@
 
   <!-- Page Wrapper -->
   <div id="wrapper">
-    <!-- load left mnue -->
+    <!-- load left menu -->
     <?php $this->load->view('staff-left-menu'); ?>
 
     <!-- Content Wrapper -->
