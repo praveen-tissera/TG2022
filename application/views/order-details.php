@@ -139,7 +139,7 @@
               </tr>";
               echo "</thead>
                     <tbody>";
-              foreach ($order_prodects_details as $key => $value) {
+              foreach ($order_products_details as $key => $value) {
                 
                 //print_r($value->product_details);
                 echo "<tr>";

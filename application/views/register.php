@@ -151,7 +151,7 @@ echo '</div>';
 
 
 
-        echo form_submit('submit', 'LOG IN', "class='btn btn-primary btn-block'");
+        echo form_submit('submit', 'Register', "class='btn btn-primary btn-block'");
     echo form_close();
 
 ?>

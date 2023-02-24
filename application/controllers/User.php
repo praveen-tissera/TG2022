@@ -396,7 +396,7 @@ public function productList(){
                         $this->session->set_userdata('userid', $result[0]->user_id);
                         
                         if($productId == 0 && $quantity == 0){
-                            $this->productList()();
+                            $this->productList();
                         
                         }else if(isset($this->session->userdata()['cart'][0]['time'])){
                                     //if cart set we do not need to shoe pickup page to get confirmation delivery time
@@ -913,7 +913,7 @@ public function staffUserLogin(){
             $result_cart_details[$key]->product_details =$this->User_model->get_product_details($value->product_id)[0];
         
         }
-        $data['order_prodects_details'] = $result_cart_details;
+        $data['order_products_details'] = $result_cart_details;
         $this->load->view('order-details',$data);
     }
 //Allocate order to staff
@@ -984,7 +984,7 @@ public function totalSales(){
             $date_end = date('Y-m-d',strtotime("-30 days"));
         }
             $data['sales_details'] = $this->User_model->get_sales($date_start,$date_end);
-            print_r($data['sales_details']);
+            //print_r($data['sales_details']);
             if($data['sales_details']){
                 $this->load->view('sales-report',$data);
             }
