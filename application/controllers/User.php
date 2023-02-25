@@ -359,7 +359,7 @@ public function productList(){
                         'quantity' => $quantity
                     );
                     if($productId == 0 && $quantity == 0){
-                        $this->productList()();
+                        $this->productList();
                     
                     }else if(isset($this->session->userdata()['cart'][0]['time'])){
                                 //if cart set we do not need to shoe pickup page to get confirmation delivery time
@@ -1006,7 +1006,7 @@ public function totalSales(){
 
     public function editStaff(){
         $data['staff_details'] = $this->User_model->get_all_staff();
-        print_r($_POST);
+        //print_r($_POST);
             if(isset($_POST['staff_id'])){
                 $data['staff_detail']=$this->User_model->staff_detail($_POST['staff_id']);
                 $this->load->view('edit-staff',$data);

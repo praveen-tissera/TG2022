@@ -63,7 +63,7 @@
 
               <?php echo form_close(); ?>
               <?php 
-             // print_r($staff_detail);
+
                 if(isset($staff_detail) && $staff_detail=="No result found"){
                   echo '<div class="alert alert-danger" role="alert">';
                     echo "No result found";
@@ -72,7 +72,7 @@
 
                   echo form_open('user/editStaff'); 
                 
-                 // print_r($result_staff_oder_date);
+
                   foreach ($staff_detail as $key => $value) {
                     echo "<div class='form-group'>";
                     echo "<input type='text' name='username' class='form-control' value='$value->username '>";
