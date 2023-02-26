@@ -808,6 +808,37 @@ echo '</div>';*/
 		
 
 	}
+	
+/**
+	 * get single Suppeier details
+	 */
+	public function showSingleSupplier($supplierId){
+		$item = $this->User_model->load_single_supplier($supplierId);
+		$all_category = $this->User_model->load_all_products_category();
+		
+		if($item){
+			
+			$data['item']  = $item;
+			$data['all_cat'] = $all_category;
+			$success = $this->session->flashdata('success_message_display');
+			$error = $this->session->flashdata('error_message_display');	
+			if(!empty($success)){
+				$data['success_message_display'] = $success;
+				
+				$this->load->view('edit-supplier',$data);
+			}else if(!empty($error)){
+				$data['error_message_display'] = $error;
+				$this->load->view('edit-supplier',$data);
+			}
+			else{
+				$this->load->view('edit-supplier',$data);
+			}
+			
+		}
+		
+		
+
+	}
 
 /**
 	 * get single item details
@@ -907,6 +938,33 @@ echo '</div>';*/
 				}else{
 					$this->session->set_flashdata('error_message_display','Something wet wrong! Try again');
 					redirect('user/showSingleCategory/'.$_POST['category_id']);	
+				}
+			
+	}
+
+	/**
+	 * update the supplier details 
+	 */
+	public function updateSupplier(){
+		//print_r($_FILES);
+		//$imageExsit = ($_FILES['userfile']['error'] == 0) ? time().$_FILES["userfile"]['name'] : FALSE ;
+		
+		$data = array(
+			
+			'supplier_id' => $_POST['supplier_id'],
+			'supplier_name' =>$_POST['supplier_title'],
+			'product_items' =>$_POST['product_items'],
+			'category_id' =>$_POST['category'],
+		);
+
+print_r($data);
+			$result_update = $this->User_model->update_supplier($data);
+				if($result_update){
+					$this->session->set_flashdata('success_message_display','Item updated sucessfully');
+					redirect('user/showSingleSupplier/'.$_POST['supplier_id']);	
+				}else{
+					$this->session->set_flashdata('error_message_display','Something wet wrong! Try again');
+					redirect('user/showSingleSupplier/'.$_POST['supplier_id']);	
 				}
 			
 	}

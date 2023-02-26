@@ -498,6 +498,25 @@ class User_model extends CI_Model
             return false;
         }
     }
+     /**
+     * load single Supplier 
+     */
+    public function load_single_supplier($supplier_id){
+        $condition = "supplier_id = " . "'". $supplier_id. "'";  
+        $this->db->select('*');
+        $this->db->from('tbl_suppliers');
+        $this->db->where($condition);
+        
+        $query = $this->db->get();
+        //echo $this->db->last_query();
+        $query->num_rows();
+        if ($query->num_rows() > 0) {
+            return $query->result();
+        } 
+        else {
+            return false;
+        }
+    }
 
      /**
      * load single item by item id
@@ -687,6 +706,31 @@ class User_model extends CI_Model
             return FALSE;
         }
     }
+
+
+       /**
+     * update item details
+     */
+    public function update_supplier($data){
+
+        $this->db->set('supplier_name', $data['supplier_name']);
+        $this->db->set('product_items', $data['product_items']);
+        $this->db->set('category_id', $data['category_id']);
+       
+       
+        $this->db->where('supplier_id', $data['supplier_id']);
+        $this->db->update('tbl_suppliers');
+    
+        if ($this->db->affected_rows() > 0) {
+            return TRUE;
+            //echo "success";
+        }else{
+            //echo "error";
+            return FALSE;
+        }
+    }
+
+
       /**
      * update item details
      */

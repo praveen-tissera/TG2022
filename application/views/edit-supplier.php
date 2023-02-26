@@ -53,15 +53,23 @@
               ?>
          </div>
             <div class="col-12">
-              <?php //print_r($product_details); ?>
+              <?php //print_r($product_details);
+              print_r($item);
+              ?>
          
               
 
-            <?php echo form_open('user/updateItem');?>
-            <input type="hidden" value="<?php echo $item[0]->item_id ?>" name="item_id">
+            <?php echo form_open('user/updateSupplier');?>
+            <input type="hidden" value="<?php echo $item[0]->supplier_id ?>" name="supplier_id">
             <div class="form-group">
-              <label for="productname">Category Name</label>
-              <input value="<?php echo $item[0]->item_title; ?>"  type="text" name="item_title" class="form-control"  placeholder="item name" required>
+              <label for="supplername">Supplier_name</label>
+              <input value="<?php echo $item[0]->supplier_name; ?>"  type="text" name="supplier_title" class="form-control"  placeholder="item name" required>
+              
+            </div>
+
+            <div class="form-group">
+              <label for="productname">Product Items</label>
+              <input value="<?php echo $item[0]->product_items; ?>"  type="text" name="product_items" class="form-control"  placeholder="item name" required>
               
             </div>
 
@@ -69,16 +77,15 @@
            
 
             <div class="form-group">
-              <label>Item Availability</label>
-              <select name="availability" class="form-control">
+              <label>Category</label>
+             
+              <select name="category" class="form-control">
               <?php
-                if($item[0]->availability == 'yes'){
-                  echo "<option value='yes'>Yes</option>
-                  <option value='no'>No</option>";
-                }else{
-                  echo "<option value='no'>No</option>
-                  <option value='yes'>Yes</option>";
-                }
+              
+              foreach($all_cat as $value){
+                echo "<option value='$value->catagory_id'>$value->category_name</option>";
+              }
+                
               
               ?>
                   
@@ -86,7 +93,7 @@
               
             </div>
 
-            <?php echo "<input type='submit' name='submit' value='Update item' class='btn btn-primary' /> ";?>
+            <?php echo "<input type='submit' name='submit' value='Update supplier' class='btn btn-primary' /> ";?>
             <?php echo form_close();?>
 
             </div>

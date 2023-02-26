@@ -78,7 +78,7 @@
          echo "</td>";
          if ($this->session->userdata()['staffuser']->staff_role == 'manager') {
           echo "<td>";
-              echo "<a href='". base_url('index.php/user/showSingleItem/'.$value->supplier_id) . "'> Edit </a>";
+              echo "<a href='". base_url('index.php/user/showSingleSupplier/'.$value->supplier_id) . "'> Edit </a>";
           echo "</td>";
         }
         
