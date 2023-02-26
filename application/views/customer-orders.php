@@ -29,8 +29,7 @@
                     echo '</div>';
                 }else{
 
-                
-
+ 
                 echo "<h3>Order Histroy</h3>";
                 echo "<table class='table table-striped'>";
                    echo" <thead>
@@ -68,19 +67,15 @@
                        
                        echo "</tr>";
                     }
-                       
-                        
+                                              
                    echo  "</tbody>
                 </table>";
             }
             ?>
 
-
         </div>
     </div>
 </div>
-
-
 
 
 <?php $this->load->view('footer') ?>

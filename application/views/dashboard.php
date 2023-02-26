@@ -49,7 +49,7 @@
                         <th>Order place time</th>
                         <th >Pick up time</th>
                         <th>Order Status</th>
-                        <th >Oder Handled By</th>
+                        <th >Order Handled By</th>
                       </tr>
                     </thead>
                     <tbody>

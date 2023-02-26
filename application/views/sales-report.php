@@ -74,7 +74,7 @@
                       </tr>
                     </thead>
                     <tbody>";
-                  // print_r($sales_details);
+
                    $subtotal= 0;
                   foreach ($sales_details as $key => $value) {
                     $subtotal=$subtotal+$value->total;

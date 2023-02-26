@@ -6,7 +6,7 @@
 
 
                 <div class="right-area">
-                        <h6><a class="plr-20 color-white btn-fill-primary" href="#">ORDER: +625 353 353</a></h6>
+                        <h6><a class="plr-20 color-white btn-fill-primary" href="#">ORDER: +611 335 335</a></h6>
                 </div><!-- right-area -->
 
                 <a class="menu-nav-icon" data-menu="#main-menu" href="#"><i class="ion-navicon"></i></a>
@@ -14,7 +14,7 @@
                 <ul class="main-menu font-mountainsre" id="main-menu">
                         
                         
-                        <li><a href="<?php echo base_url('index.php/user/foodMenu') ?>">PRODUCTS</a></li>
+                        <li><a href="<?php echo base_url('index.php/user/productList') ?>">PRODUCTS</a></li>
                         <li><a href="<?php echo base_url('/index.php/user/selectUser/') ?>">ONLINE ORDER</a></li>
                         <li><a href="<?php echo base_url('/index.php/user/myCart') ?>">MY CART</a></li>
                         <li><a href="<?php echo base_url('index.php/user/location') ?>">LOCATION</a></li>

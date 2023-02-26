@@ -21,7 +21,7 @@
 
   <!-- Page Wrapper -->
   <div id="wrapper">
-    <!-- load left mnue -->
+    <!-- load left menu -->
     <?php $this->load->view('staff-left-menu'); ?>
 
     <!-- Content Wrapper -->
@@ -139,7 +139,7 @@
               </tr>";
               echo "</thead>
                     <tbody>";
-              foreach ($order_prodects_details as $key => $value) {
+              foreach ($order_products_details as $key => $value) {
                 
                 //print_r($value->product_details);
                 echo "<tr>";

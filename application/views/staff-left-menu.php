@@ -37,16 +37,13 @@
       </a>
       <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <!-- <h6 class="collapse-header">Custom Components:</h6> -->
-          <a class="collapse-item" href="<?php echo base_url('index.php/user/createMenu') ?>">Add New Menu</a>
+          <a class="collapse-item" href="<?php echo base_url('index.php/user/createMenu') ?>">Add New Product</a>
           <a class="collapse-item" href="<?php echo base_url('index.php/user/createCategory') ?>">Add New Category</a>
-          <a class="collapse-item" href="<?php echo base_url('index.php/user/createItem') ?>">Add New Item</a>
-          <a class="collapse-item" href="<?php echo base_url('index.php/user/showAllProducts') ?>">View Menu</a>
+          <a class="collapse-item" href="<?php echo base_url('index.php/user/showAllProducts') ?>">View Products</a>
           <a class="collapse-item" href="<?php echo base_url('index.php/user/showAllProductsCategory') ?>">View Category</a>
-          <a class="collapse-item" href="<?php echo base_url('index.php/user/showAllItem') ?>">View Item</a>
           <a class="collapse-item" href="<?php echo base_url('index.php/user/editStaff') ?>">Edit Staff</a>
           <a class="collapse-item" href="<?php echo base_url('index.php/user/showAllISuppliers') ?>">View  Suppliers</a>
-          <a class="collapse-item" href="<?php echo base_url('index.php/user/editStaff') ?>">Edit Staff</a>
+          <a class="collapse-item" href="<?php echo base_url('index.php/user/editStaff') ?>">Edit Suppliers</a>
           <a class="collapse-item" href="<?php echo base_url('index.php/user/createPromotion') ?>">Create Promotion</a>
         </div>
       </div>
@@ -62,7 +59,6 @@
       </a>
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
-          <!-- <h6 class="collapse-header">Custom Components:</h6> -->
           <a class="collapse-item" href="<?php echo base_url('index.php/user/ordersByStaff') ?>">Orders by staff</a>
           
           <a class="collapse-item" href="<?php echo base_url('index.php/user/totalSales') ?>">Sales Report</a>

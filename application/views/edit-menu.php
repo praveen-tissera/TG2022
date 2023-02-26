@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-        <title>TREAT TOO FAMIL RESTAURANT</title>
+        <title>Mran Supermarket</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
@@ -121,7 +121,7 @@
               
             </div>
 
-            <?php echo "<input type='submit' name='submit' value='Update menu' class='btn btn-primary' /> ";?>
+            <?php echo "<input type='submit' name='submit' value='Update Product' class='btn btn-primary' /> ";?>
             <?php echo form_close();?>
 
             </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-        <title>TREAT TOO FAMIL RESTAURANT</title>
+        <title>Mran Supermarket</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta charset="UTF-8">
@@ -65,16 +65,16 @@
               
             </div>
 
-                <label>Select Items</label><br>
+                <!--<label>Select Items</label><br>-->
                   <?php 
                     //print_r($all_items);
-                    foreach ($all_items as $key => $value) {
+                    //foreach ($all_items as $key => $value) {
                       //print_r($value);
-                      echo '<div class="form-group form-check-inline">';
-                      echo "<input type='checkbox' class='form-check-input' name='item_list[]' value ='$value->item_id' >";
-                      echo "<label class='form-check-label'>$value->item_title</label>";
-                      echo "</div>";
-                    }
+                      //echo '<div class="form-group form-check-inline">';
+                      //echo "<input type='checkbox' class='form-check-input' name='item_list[]' value ='$value->item_id' >";
+                      //echo "<label class='form-check-label'>$value->item_title</label>";
+                      //echo "</div>";
+                    //}
                     
                   ?>
 
@@ -101,7 +101,7 @@
               
             </div>
 
-            <?php echo "<input type='submit' name='submit' value='Create new menu' class='btn btn-primary' /> ";?>
+            <?php echo "<input type='submit' name='submit' value='Create new Product' class='btn btn-primary' /> ";?>
             <?php echo form_close();?>
 
             </div>

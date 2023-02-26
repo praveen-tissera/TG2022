@@ -6,8 +6,6 @@ class User_model extends CI_Model
         $this->db->select('*');
         $this->db->from('tbl_product_catagory');
         $this->db->where($condition);
-        // $this->db->select('*');
-        // $this->db->from('tbl_product_catagory');
         $query = $this->db->get();
         if ($query->num_rows() > 0) {
             return $query->result();
@@ -24,9 +22,8 @@ class User_model extends CI_Model
         $this->db->select('*');
         $this->db->from('tbl_product');
         $this->db->where($condition);
-        //$this->db->order_by("schedule_date", "desc");
+        
         $query_products = $this->db->get();
-         //echo $this->db->last_query();
          
         if ($query_products->num_rows() > 0) {
             return $query_products->result();
@@ -39,6 +36,8 @@ class User_model extends CI_Model
             return  false;
         }
     }
+
+
     /**
      * get products order by category id
      */
@@ -47,15 +46,12 @@ class User_model extends CI_Model
         $this->db->select('*');
         $this->db->from('tbl_product_item');
         $this->db->where($condition);
-        //$this->db->order_by("schedule_date", "desc");
         $query_product_item = $this->db->get();
-         //echo $this->db->last_query();
          
         if ($query_product_item->num_rows() > 0) {
             $result_product_items = $query_product_item->result();
             
             foreach ($result_product_items as $key => $value) {
-             //print_r($value->item_id);
              $condition ="item_id =" . "'" . $value->item_id . "'";
             $this->db->select('item_title');
             $this->db->from('tbl_item');
@@ -68,20 +64,16 @@ class User_model extends CI_Model
             return $result_product_items;
             
         } 
-        // elseif($query_products->num_rows() == 0){
-        //     return 'empty';
-        // }
-        // else{
-        //     return  false;
-        // }
     }
 
+/**
+     * get products order by product id
+     */
     public function get_product($product_id){
         $condition ="product_id =" . "'" . $product_id . "'";
         $this->db->select('*');
         $this->db->from('tbl_product');
         $this->db->where($condition);
-        //$this->db->order_by("schedule_date", "desc");
         $query_products = $this->db->get();
         if ($query_products->num_rows() > 0) {
             return $query_products->result();
@@ -90,6 +82,10 @@ class User_model extends CI_Model
             return false;
         }
     }
+/**
+     * register users
+     */
+
     public function user_registration($data){
         print_r($data);
         $condition = "email =" . "'" . $data['email'] . "'";
@@ -113,6 +109,9 @@ class User_model extends CI_Model
             return 'error';
         }      
     }
+/**
+     * get all new orders
+     */
     public function get_new_orders(){
         $condition ="order_status ='new'";
         $this->db->select('*');
@@ -128,7 +127,10 @@ class User_model extends CI_Model
             return false;
         }
     }
-    public function get_my_orders($staffid){
+   /**
+     * get orders by staff id
+     */
+public function get_my_orders($staffid){
         $condition ="staff_id ='$staffid'";
         $this->db->select('*');
         $this->db->from('tbl_order');
@@ -142,6 +144,10 @@ class User_model extends CI_Model
             return false;
         }
     }
+/**
+     * get products orders in processing
+     */
+
     public function get_all_processing_orders(){
         $condition ="order_status !='new'";
         $this->db->select('*');
@@ -156,8 +162,20 @@ class User_model extends CI_Model
             return false;
         }
     }
+
+
+
+
+
+
+
+
+
     
-    public function place_order($data){
+   /**
+     * place orders
+     */
+ public function place_order($data){
         //print_r($this->session->userdata());
             // Query to insert order data into database
             $this->db->insert('tbl_order', $data);
@@ -180,6 +198,10 @@ class User_model extends CI_Model
             }
             
     }
+/**
+     * get user details by user id
+     */
+
     public function get_user_details($user_id){
         $condition ="user_id ='$user_id'";
         $this->db->select('*');
@@ -194,9 +216,10 @@ class User_model extends CI_Model
             return false;
         }
     }
+
     // staff login
     public function staff_user_login($data){
-        //lawyer login
+        
         $condition = "username =" . "'" . $data['username'] . "' AND " . "password =" . "'" . $data['password'] . "'";
         $this->db->select('*');
         $this->db->from('tbl_staff');
@@ -229,16 +252,24 @@ class User_model extends CI_Model
             return false;
         }
     }
+
+
+
+
+
+
+
+
+
     // customer login
     public function customer_login($data){
-        //lawyer login
+        
         $condition = "email =" . "'" . $data['username'] . "' AND " . "password =" . "'" . $data['password'] . "'";
         $this->db->select('*');
         $this->db->from('tbl_user');
         $this->db->where($condition);
         $this->db->limit(1);
         $query = $this->db->get();
-        //echo $this->db->last_query();
         $query->num_rows();
         if ($query->num_rows() == 1) {
             return $query->result();
@@ -247,6 +278,9 @@ class User_model extends CI_Model
             return false;
         }
     }
+
+     //get customer details
+     
     public function getCustomerOrders($customerid){
        
         $condition = "user_id =" . "'" . $customerid . "'";
@@ -255,8 +289,7 @@ class User_model extends CI_Model
         $this->db->where($condition);
         
         $query = $this->db->get();
-        //echo $this->db->last_query();
-        $query->num_rows();
+               $query->num_rows();
         if ($query->num_rows() > 0) {
             return $query->result();
         } 
@@ -264,16 +297,24 @@ class User_model extends CI_Model
             return false;
         }
     }
-    /**
-     * load all active categories
-     */
+
+
+
+
+
+
+
+
+
+    
+     //load all active categories
+     
     public function get_all_categories(){
         $this->db->select('*');
         $this->db->from('tbl_product_catagory');
         
         
         $query = $this->db->get();
-        //echo $this->db->last_query();
         $query->num_rows();
         if ($query->num_rows() > 0) {
             return $query->result();
@@ -283,27 +324,7 @@ class User_model extends CI_Model
         }
     }
 
-     /**
-     * load all active items
-     */
-    public function get_all_items(){
-        $condition = "availability = 'yes'";
-        $this->db->select('*');
-        $this->db->from('tbl_item');
-        $this->db->where($condition);
-        
-        
-        $query = $this->db->get();
-        //echo $this->db->last_query();
-        $query->num_rows();
-        if ($query->num_rows() > 0) {
-            return $query->result();
-        } 
-        else {
-            return false;
-        }
-    }
-
+    
     /**
      * add new product to the db
      */
@@ -315,8 +336,7 @@ class User_model extends CI_Model
             return $insert_id;
         }
     }
-
-     /**
+  /**
      * add new product to the db
      */
     public function add_product_own_item($insert_id,$item_list){
@@ -342,10 +362,9 @@ class User_model extends CI_Model
         
         
         $query = $this->db->get();
-        //echo $this->db->last_query();
+        
         $query->num_rows();
         if ($query->num_rows() > 0) {
-            //return $query->result();
             return 'DUPLICATE';
         } 
         else {
@@ -359,41 +378,30 @@ class User_model extends CI_Model
         
     }
 
-      /**
-     * add new item to the db
-     */
-    public function add_new_item($data){
-        $condition = "item_title =" . "'" . $data['item_title'] . "'";
-        $this->db->select('*');
-        $this->db->from('tbl_item');
-        $this->db->where($condition);
-        
-        
-        $query = $this->db->get();
-        // echo $this->db->last_query();
-        // echo $query->num_rows();
-        if ($query->num_rows() > 0) {
-            //return $query->result();
-            return 'DUPLICATE';
-        } 
-        else {
-            $this->db->insert('tbl_item', $data);
-            
-            if ($this->db->affected_rows() > 0) {
-                $insert_id = $this->db->insert_id();
-                return $insert_id;
-            }
-        }
-        
-    }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//load products from db
     public function load_all_products(){
         $this->db->select('*');
         $this->db->from('tbl_product');
         
         $this->db->order_by("product_id", "desc");
         $query = $this->db->get();
-        //echo $this->db->last_query();
         $query->num_rows();
         if ($query->num_rows() > 0) {
             return $query->result();
@@ -411,7 +419,6 @@ class User_model extends CI_Model
         
         $this->db->order_by("category_name", "ASC");
         $query = $this->db->get();
-        //echo $this->db->last_query();
         $query->num_rows();
         if ($query->num_rows() > 0) {
             return $query->result();
@@ -421,24 +428,16 @@ class User_model extends CI_Model
         }
     }
 
- /**
-     * load all items from db
-     */
-    public function load_all_item(){
-        $this->db->select('*');
-        $this->db->from('tbl_item');
-        
-        $this->db->order_by("item_title", "ASC");
-        $query = $this->db->get();
-        //echo $this->db->last_query();
-        $query->num_rows();
-        if ($query->num_rows() > 0) {
-            return $query->result();
-        } 
-        else {
-            return false;
-        }
-    }
+ 
+
+
+
+
+
+
+
+
+
 
      /**
      * load all suppliers from db
@@ -449,7 +448,6 @@ class User_model extends CI_Model
         
         $this->db->order_by("supplier_name", "ASC");
         $query = $this->db->get();
-        //echo $this->db->last_query();
         $query->num_rows();
         if ($query->num_rows() > 0) {
             return $query->result();
@@ -458,7 +456,6 @@ class User_model extends CI_Model
             return false;
         }
     }
-
 
     /**
      * load single product from db
@@ -470,7 +467,6 @@ class User_model extends CI_Model
         $this->db->where($condition);
         
         $query = $this->db->get();
-        //echo $this->db->last_query();
         $query->num_rows();
         if ($query->num_rows() > 0) {
             return $query->result();
@@ -479,6 +475,15 @@ class User_model extends CI_Model
             return false;
         }
     }
+
+
+
+
+
+
+
+
+
     /**
      * load single category by category id
      */
@@ -489,7 +494,6 @@ class User_model extends CI_Model
         $this->db->where($condition);
         
         $query = $this->db->get();
-        //echo $this->db->last_query();
         $query->num_rows();
         if ($query->num_rows() > 0) {
             return $query->result();
@@ -538,6 +542,7 @@ class User_model extends CI_Model
         }
     }
 
+//load single category name by category id
 
     public function category_name($categoryid){
         $condition = "catagory_id =" . "'" . $categoryid . "'";
@@ -546,7 +551,6 @@ class User_model extends CI_Model
         $this->db->where($condition);
         
         $query = $this->db->get();
-        //echo $this->db->last_query();
         $query->num_rows();
         if ($query->num_rows() > 0) {
             return $query->result();
@@ -555,6 +559,15 @@ class User_model extends CI_Model
             return false;
         }
     }
+
+
+
+
+
+
+
+
+
     public function get_order_details($orderid){
         $condition = "order_id =" . "'" . $orderid . "'";
         $this->db->select('*');
@@ -562,7 +575,6 @@ class User_model extends CI_Model
         $this->db->where($condition);
         
         $query = $this->db->get();
-        //echo $this->db->last_query();
         $query->num_rows();
         if ($query->num_rows() > 0) {
             return $query->result();
@@ -571,6 +583,7 @@ class User_model extends CI_Model
             return false;
         }
     }
+     //load cart details from order id
     public function get_cart_details($orderid){
         $condition = "order_id =" . "'" . $orderid . "'";
         $this->db->select('product_id,quantity');
@@ -578,7 +591,6 @@ class User_model extends CI_Model
         $this->db->where($condition);
         
         $query = $this->db->get();
-        //  echo $this->db->last_query();
         $query->num_rows();
         if ($query->num_rows() > 0) {
             return $query->result();
@@ -587,6 +599,7 @@ class User_model extends CI_Model
             return false;
         }
     }
+//load product details from product id
     public function get_product_details($productid){
         $condition = "product_id =" . "'" . $productid . "'";
         $this->db->select('*');
@@ -594,7 +607,6 @@ class User_model extends CI_Model
         $this->db->where($condition);
         
         $query = $this->db->get();
-        //echo $this->db->last_query();
         $query->num_rows();
         if ($query->num_rows() > 0) {
             return $query->result();
@@ -603,6 +615,7 @@ class User_model extends CI_Model
             return false;
         }
     }
+//update order 
     public function update_order_allocation($orderid){
         $this->db->set('staff_id', $this->session->userdata['staffuser']->staff_id);
         $this->db->where('order_id', $orderid);
@@ -610,18 +623,14 @@ class User_model extends CI_Model
         
         if ($this->db->affected_rows() > 0) {
             return TRUE;
-            //echo "success";
         }else{
-            //echo "error";
+
             return FALSE;
         }
     }
 
+//check user availability
     public function add_registered_user_details($data){
-        
-        // Query to insert user data into database
-        //$this->db->insert('tbl_user', $data);
-       // print_r($data);
         
         $condition = "email =" . "'" . $data['email'] . "'";
         $this->db->select('*');
@@ -629,7 +638,6 @@ class User_model extends CI_Model
         $this->db->where($condition);
     
         $query = $this->db->get();
-        //echo $this->db->last_query();
         $query->num_rows();
         if ($query->num_rows() == 0) {
             $this->db->insert('tbl_user', $data);
@@ -639,6 +647,17 @@ class User_model extends CI_Model
             return FALSE;
         }
     }
+
+
+
+
+
+
+
+
+
+
+//update order status
 
     public function update_order_status($status, $orderid){
         if($status == 'dispatch'){
@@ -650,9 +669,7 @@ class User_model extends CI_Model
         
         if ($this->db->affected_rows() > 0) {
             return TRUE;
-            //echo "success";
         }else{
-            //echo "error";
             return FALSE;
         }
     }
@@ -662,7 +679,6 @@ class User_model extends CI_Model
     public function update_product($data){
         $this->db->set('category_id', $data['category_id']);
         $this->db->set('product_title', $data['product_title']);
-        // $this->db->set('product_description', $data['product_description']);
         $this->db->set('availability', $data['availability']);
         $this->db->set('currency', $data['currency']);
         $this->db->set('price', $data['price']);
@@ -672,18 +688,20 @@ class User_model extends CI_Model
 
         $this->db->where('product_id', $data['product_id']);
         $this->db->update('tbl_product');
-        // $this->db->set('staff_id', $this->session->userdata['staffuser']->staff_id);
-        // $this->db->where('order_id', $product_id);
-        // $this->db->update('tbl_order');
-        
         if ($this->db->affected_rows() > 0) {
             return TRUE;
-            //echo "success";
         }else{
-            //echo "error";
             return FALSE;
         }
     }
+
+
+
+
+
+
+
+
      /**
      * update category details
      */
@@ -761,12 +779,12 @@ class User_model extends CI_Model
     
         if ($this->db->affected_rows() > 0) {
             return TRUE;
-            //echo "success";
         }else{
-            //echo "error";
             return FALSE;
         }
     }
+      
+ //get staff details
     public function get_all_staff(){
         $condition = "staff_role =" . "'staff'";
         $this->db->select('*');
@@ -774,7 +792,6 @@ class User_model extends CI_Model
         $this->db->where($condition);
         
         $query = $this->db->get();
-        //echo $this->db->last_query();
         $query->num_rows();
         if ($query->num_rows() > 0) {
             return $query->result();
@@ -783,6 +800,19 @@ class User_model extends CI_Model
             return false;
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+//get orders by staff id and date
     public function get_staff_order_by_date_range($staffid,$date_start,$date_end){
         $condition = "order_place_date <=" . "'". $date_start ."'".  " AND ".  "order_place_date >=". "'" . $date_end . "'" . " AND " . "staff_id=" . "'" . $staffid . "'";
        $this->db->select('*');
@@ -790,7 +820,6 @@ class User_model extends CI_Model
         $this->db->where($condition);
         
         $query = $this->db->get();
-        //echo $this->db->last_query();
         $query->num_rows();
         if ($query->num_rows() > 0) {
             return $query->result();
@@ -799,14 +828,13 @@ class User_model extends CI_Model
             return false;
         }
     }
-
+//get sales
     public function get_sales($date_start,$date_end){
         $condition = "order_place_date <=" . "'". $date_start ."'".  " AND ".  "order_place_date >=". "'" . $date_end . "'".    " AND ". "order_status=" . " 'dispatch' ";
         $this->db->select('*');
         $this->db->from('tbl_order');
         $this->db->where($condition);
         $query = $this->db->get();
-        //echo $this->db->last_query();
         $query->num_rows();
         if ($query->num_rows() > 0) {
             return $query->result();
@@ -814,8 +842,8 @@ class User_model extends CI_Model
         else {
             return false;
         }
-
     }
+//add promotion
     public function add_new_promotion($data){
         $this->db->insert('tbl_promotion', $data);
             
@@ -824,6 +852,8 @@ class User_model extends CI_Model
             return $insert_id;
         }
     }
+
+//get promotion
     public function get_promotion(){
         $condition = "status =" . "'active'";
         $this->db->select('*');
