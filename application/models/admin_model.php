@@ -170,6 +170,7 @@ class admin_model extends CI_Model
 	public function edit_book($id)
 	{
 		$data = $this->upload->data();
+		echo $image_path = base_url("uploads/image/".$data['raw_name'].$data['file_ext']);
 		
 		$data = array(
 			'book_name' => $this->input->post('book_name'),
