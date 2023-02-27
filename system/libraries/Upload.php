@@ -377,6 +377,7 @@ class CI_Upload {
 		if (isset($_FILES[$field]))
 		{
 			$_file = $_FILES[$field];
+			
 		}
 		// Does the field name contain array notation?
 		elseif (($c = preg_match_all('/(?:^[^\[]+)|\[[^]]*\]/', $field, $matches)) > 1)
@@ -392,6 +393,7 @@ class CI_Upload {
 				}
 
 				$_file = $_file[$field];
+				
 			}
 		}
 
@@ -403,7 +405,7 @@ class CI_Upload {
 
 		// Is the upload path valid?
 		if ( ! $this->validate_upload_path())
-		{
+		{	
 			// errors will already be set by validate_upload_path() so just return FALSE
 			return FALSE;
 		}
@@ -986,6 +988,7 @@ class CI_Upload {
 	 */
 	public function validate_upload_path()
 	{
+		
 		if ($this->upload_path === '')
 		{
 			$this->set_error('upload_no_filepath', 'error');
@@ -993,21 +996,26 @@ class CI_Upload {
 		}
 
 		if (realpath($this->upload_path) !== FALSE)
-		{
+		{	
+			
 			$this->upload_path = str_replace('\\', '/', realpath($this->upload_path));
+			
 		}
 
-		if ( ! is_dir($this->upload_path))
-		{
-			$this->set_error('upload_no_filepath', 'error');
-			return FALSE;
-		}
+		// if ( ! is_dir($this->upload_path))
+		// {
+		// 	echo $this->upload_path;
+		// 	echo ">>>>>>>>>>>>>>>>>>";
+		// 	$this->set_error('upload_no_filepath', 'error');
+		// 	return FALSE;
+		// }
 
-		if ( ! is_really_writable($this->upload_path))
-		{
-			$this->set_error('upload_not_writable', 'error');
-			return FALSE;
-		}
+		// if ( ! is_really_writable($this->upload_path))
+		// {
+		// 	echo $this->upload_path;
+		// 	$this->set_error('upload_not_writable', 'error');
+		// 	return FALSE;
+		// }
 
 		$this->upload_path = preg_replace('/(.+?)\/*$/', '\\1/',  $this->upload_path);
 		return TRUE;

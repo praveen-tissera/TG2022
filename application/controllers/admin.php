@@ -249,7 +249,7 @@ class admin extends CI_Controller {
 		$config = [
 			'upload_path'=>'./uploads/image/',
 			'allowed_types'=>'jpg|png',
-			'max_size' => '400',
+			'max_size' => '4000000',
 			'overwrite' => FALSE
 			];
 
@@ -316,13 +316,15 @@ class admin extends CI_Controller {
 		$view['book_detail'] = $this->admin_model->get_book_detail($id);
 
 		/*==== Image Upload validation*/
+		$path = base_url("uploads/image/");
 		$config = [
 			'upload_path'=>'./uploads/image/',
 			'allowed_types'=>'jpg|png',
-			'max_size' => '400',
+			'max_size' => '4000000',
 			'overwrite' => TRUE
 			];
-
+		
+		
 		$this->load->library('upload', $config);
 
 		$this->form_validation->set_rules('book_name', 'Book name', 'trim|required|strip_tags[book_name]');
@@ -335,6 +337,7 @@ class admin extends CI_Controller {
 
 
 		if(($this->form_validation->run() && $this->upload->do_upload()) == FALSE)
+		// if(($this->form_validation->run() ) == FALSE)
 		{
 
 			if($this->admin_model->get_book_detail($id))
@@ -352,8 +355,9 @@ class admin extends CI_Controller {
 		else
 		{
 			$this->load->model('admin_model');
+			
 
-			if($this->admin_model->edit_book($id, $data))
+			if($this->admin_model->edit_book($id))
 			{
 				$this->session->set_flashdata('success', 'Book info update successfully');
 				redirect('admin/books');
