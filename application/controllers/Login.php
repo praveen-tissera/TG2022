@@ -49,13 +49,16 @@ public function login()
 		$data['title'] = 'Login to system';
 
 		$logged_in = $this->session->logged_in;
+		// print_r($this->session->account_level);
 		if($logged_in){
 			$profileExists = $this->profile_model->check_for_profile();
 			echo "profile logged ".$profileExists;
-			if($profileExists == 1)
+			if($profileExists == 1){
 				redirect('view_profile');
-			 else
+			}
+			 else{
 				redirect('profile');
+			 }
 		}else {
 			$this->form_validation->set_rules('username', 'username', 'required');
 			$this->form_validation->set_rules('password', 'password', 'required');
@@ -70,7 +73,7 @@ public function login()
 			else
 			{
 				$correct =  $this->profile_model->set_login();
-				if($correct) {
+				if(!$correct) {
 					$profileExists = $this->profile_model->check_for_profile();
 					if($profileExists == 1)
 						redirect('view_profile');

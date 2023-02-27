@@ -84,7 +84,10 @@
               <i class="fa fa-male"></i> Profile
           </a>
       </li>
-            <?php if(!isset($find)) { ?>
+            <?php 
+            // print_r($this->session->account_level);
+            
+            if(!isset($find) && $this->session->account_level != '3' ) { ?>
 
       <li><a href="#request" role="tab" data-toggle="tab">
           <i class="fa fa-key"></i> Request days off
