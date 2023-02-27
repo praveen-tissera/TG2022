@@ -663,13 +663,16 @@ class Project_model extends CI_Model
 	{
 		$accountID = $this->session->accountID;
 
+		// $this->db->select('*');
+		// $this->db->from('project');
+		// $this->db->join('project_tasks', 'project.projectID = project_tasks.projectID');
+		// $this->db->join('project_roles', 'project_tasks.taskID = project_roles.taskID');
+		// $this->db->join('employee_assignment', 'project_roles.roleID = employee_assignment.roleID');
+		// $this->db->join('person', 'employee_assignment.accountID = person.accountID');
+		// $this->db->where('person.accountID', $accountID);
 		$this->db->select('*');
 		$this->db->from('project');
-		$this->db->join('project_tasks', 'project.projectID = project_tasks.projectID');
-		$this->db->join('project_roles', 'project_tasks.taskID = project_roles.taskID');
-		$this->db->join('employee_assignment', 'project_roles.roleID = employee_assignment.roleID');
-		$this->db->join('person', 'employee_assignment.accountID = person.accountID');
-		$this->db->where('person.accountID', $accountID);
+		$this->db->where('managerID', $accountID);
 
 
 		$query = $this->db->get()->result();

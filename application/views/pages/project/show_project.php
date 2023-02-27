@@ -80,7 +80,7 @@
     
           <div class="col-md8">
             <h5 id="h01"><?php echo $info[0]['title']; ?> </h5>
-            <h2 id="h01" style="color: white;">Project Leader:  </h2>
+            <h2 id="h01" style="color: white;">Project Owner:  </h2>
             <p id="p01"> <?php echo $info[0]['firstname'] ?> <?php echo $info[0]['lastname']?></p>
             <p><?php echo $info[0]['email'];?></p>
             <!-- <h2 id="h01" style="color: white;">Description: </h2>
